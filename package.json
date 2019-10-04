@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "personal blog",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "vuepress dev docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakuraLili/Blog.git"
+  },
+  "keywords": [
+    "Blog",
+    "VuePress"
+  ],
+  "author": "Lily <LittleSakuraHu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakuraLili/Blog/issues"
+  },
+  "homepage": "https://github.com/sakuraLili/Blog#readme"
+}

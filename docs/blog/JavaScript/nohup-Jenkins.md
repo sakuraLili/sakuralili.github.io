@@ -1,3 +1,5 @@
+# 使用Jenkins时，报“Cannot run program "nohup"”错误
+
 最近在学习` Jenkins `。在学习[` Build a Node.js and React app with npm ` ](https://note.youdao.com/)部分时，按照官网给的` simple-node-js-react-npm-app `例子，需要跑一个` pipeline `，配置文件` Jenkifile `如下
 
 ```
