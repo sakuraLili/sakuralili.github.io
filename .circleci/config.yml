@@ -35,7 +35,7 @@ jobs:
       - run: pwd && ls -al
       - run:
           name: Deploy Over SSH
-          command: ./deploy.sh
+          command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
 
 workflows:
