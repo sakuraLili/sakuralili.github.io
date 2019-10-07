@@ -11,17 +11,17 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install git
       - run:
-        name: Update npm
-        command: 'sudo npm install -g npm@latest'
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
       - restore_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
-        name: Install npm dep
-        command: npm install
+          name: Install npm dep
+          command: npm install
       - save_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
-        paths:
-          - node_modules
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run: echo "==============构建完成=================="
   deploy:
     docker:
@@ -30,11 +30,11 @@ jobs:
     steps:
       - run: echo "==============部署开始=================="
       - attach_workspace:
-        at: /tmp/workspace
+          at: /tmp/workspace
       - run: pwd && ls -al
       - run:
-        name: Deploy
-        command: ./.circleci/deploy.sh
+          name: Deploy
+          command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
 
 workflows:
