@@ -14,3 +14,4 @@ test/
 *.ntvs*
 *.njsproj
 *.sln
+.git
