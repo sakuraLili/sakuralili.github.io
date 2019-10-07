@@ -33,9 +33,11 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: pwd && ls -al
-      - run:
-          name: Deploy Over SSH
-          command: ./circleci/deploy.sh
+      - run: cd circleci
+      - run: pwd && ls -al
+      # - run:
+      #     name: Deploy Over SSH
+      #     command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
 
 workflows:
