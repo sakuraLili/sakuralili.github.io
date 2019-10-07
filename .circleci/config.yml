@@ -22,6 +22,10 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./*
       - run: echo "==============构建完成=================="
   deploy:
     working_directory: /tmp/workspace
@@ -33,11 +37,9 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: pwd && ls -al
-      - run: cd .circleci
-      - run: pwd && ls -al
-      # - run:
-      #     name: Deploy Over SSH
-      #     command: ./.circleci/deploy.sh
+      - run:
+          name: Deploy Over SSH
+          command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
 
 workflows:
