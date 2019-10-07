@@ -1,6 +1,13 @@
 module.exports = {
   title: 'Hello World',
   description: 'Personal blog',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@alias': './public/images'
+      }
+    }
+  },
   head: [
     ['link', { ref: 'icon', href: './public/favicon.icon' }]
   ],
@@ -15,6 +22,7 @@ module.exports = {
       '/blog/': [
         'JavaScript/',
         'functional/',
+        'question/'
       ]
     },
     lastUpdated: 'Last Updated'
