@@ -4,6 +4,7 @@ jobs:
     working_directory: /tmp/workspace
     docker:
       - image: circleci/node
+      - image: bash:4.4.19
     steps:
       - run: echo "==============构建开始=================="
       - checkout
