@@ -4,7 +4,6 @@ jobs:
     working_directory: /tmp/workspace
     docker:
       - image: circleci/node
-      - image: bash:4.4.19
     steps:
       - run: echo "==============构建开始=================="
       - checkout
@@ -28,13 +27,15 @@ jobs:
       - image: bash:4.4.19
     steps:
       - run: echo "==============部署开始=================="
-      - attach_workspace:
-        at: /tmp/workspace
+      - checkout
+      - run: sudo apt-get update
+      - run: sudo apt-get install git
       - run: pwd && ls -al
       - run:
         name: Deploy
         command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
+
 workflows:
   version: 2
   build_and_deploy:
