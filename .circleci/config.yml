@@ -24,6 +24,7 @@ jobs:
             - node_modules
       - run: echo "==============构建完成=================="
   deploy:
+    working_directory: /tmp/workspace
     docker:
       - image: circleci/node
       - image: bash:4.4.19
