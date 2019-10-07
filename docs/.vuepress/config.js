@@ -21,6 +21,7 @@ module.exports = {
     sidebar: {
       '/blog/': [
         'JavaScript/',
+        'CSS/',
         'functional/',
         'question/'
       ]
