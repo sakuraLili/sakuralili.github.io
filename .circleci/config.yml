@@ -25,6 +25,7 @@ jobs:
     working_directory: /tmp/workspack
     docker:
       - image: circleci/node
+      - image: bash:4.4.19
     steps:
       - run: echo "==============部署开始=================="
       - attach_workspace:
