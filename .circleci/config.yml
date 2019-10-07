@@ -4,9 +4,12 @@ jobs:
     working_directory: /tmp/workspace
     docker:
       - image: circleci/node
+      - image: bash:4.4.19
     steps:
       - run: echo "==============构建开始=================="
       - checkout
+      - run: sudo apt-get update
+      - run: sudo apt-get install git
       - run:
         name: Update npm
         command: 'sudo npm install -g npm@latest'
@@ -21,15 +24,13 @@ jobs:
           - node_modules
       - run: echo "==============构建完成=================="
   deploy:
-    working_directory: /tmp/workspack
     docker:
       - image: circleci/node
       - image: bash:4.4.19
     steps:
       - run: echo "==============部署开始=================="
-      - checkout
-      - run: sudo apt-get update
-      - run: sudo apt-get install git
+      - attach_workspace:
+        at: /tmp/workspace
       - run: pwd && ls -al
       - run:
         name: Deploy
