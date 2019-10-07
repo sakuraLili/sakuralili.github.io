@@ -33,8 +33,8 @@ jobs:
           at: /tmp/workspace
       - run: pwd && ls -al
       - run:
-          name: Deploy
-          command: ./.circleci/deploy.sh
+          name: Deploy Over SSH
+          command: ./deploy.sh
       - run: echo "==============部署完成=================="
 
 workflows:
