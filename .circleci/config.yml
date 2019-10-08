@@ -27,9 +27,6 @@ jobs:
           paths:
             - ./*
       - run: echo "==============构建完成=================="
-      - add_ssh_keys:
-          fingerprints:
-            - "dc:a8:e0:75:ae:35:97:28:bd:81:5d:9b:bf:72:1d:10"
   deploy:
     working_directory: /tmp/workspace
     docker:
