@@ -39,7 +39,7 @@ jobs:
       - run: pwd && ls -al
       - run:
           name: ssh
-          command: ssh -p 64536 34.230.89.142
+          command: ssh -p 64535 54.159.129.243
       - run:
           name: Deploy Over SSH
           command: ./.circleci/deploy.sh
