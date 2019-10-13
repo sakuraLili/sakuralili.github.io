@@ -3,12 +3,12 @@
 # 终止一个错误
 set -e
 
-git pull
+# git pull
 # 构建
-npm run build
+# npm run build
 
 # 进入生成的构建文件夹
-cd docs/.vuepress/dist
+# cd docs/.vuepress/dist
 
 # 如果你是要部署到自定义域名
 # echo 'www.example.com' > CNAME
