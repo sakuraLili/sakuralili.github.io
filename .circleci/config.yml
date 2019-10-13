@@ -38,15 +38,9 @@ jobs:
           at: /tmp/workspace
       - run: pwd && ls -al
       - run:
-          name: ssh
-          command: ssh -p 64535 54.159.129.243
-      - run:
           name: Deploy Over SSH
           command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
-      - add_ssh_keys:
-          fingerprints:
-            - "3e:7f:da:b6:a7:b9:6c:14:cf:1a:2d:95:2b:01:6b:9b"
 
 workflows:
   version: 2
