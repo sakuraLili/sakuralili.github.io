@@ -41,6 +41,7 @@ jobs:
           at: /tmp/workspace
       - run: pwd && ls -al
       - run: ssh -T git@github.com
+      - run: echo "yes"
       - run:
           name: get bash permission
           command: chmod 755 ./.circleci/deploy.sh
