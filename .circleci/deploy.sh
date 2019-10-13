@@ -16,17 +16,13 @@ cd docs/.vuepress/dist
 # echo 'www.example.com' > CNAME
 
 git init
-echo "before add"
-git status
 git add -A
-echo "after add"
-git status
-echo "before commit"
 git commit -m 'deploy'
-git status
-echo "after commit"
 
+echo "before push"
+yes
 # 如果你想要部署到 https://<USERNAME>.github.io
 git push -f git@github.com:sakuraLili/sakuralili.github.io.git master
 
+echo "after push"
 cd -
