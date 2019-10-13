@@ -3,8 +3,8 @@
 # 终止一个错误
 set -e
 
-# git config --global user.email "847300267@qq.com"
-# git config --global user.name "circleci.com"
+git config --global user.email "847300267@qq.com"
+git config --global user.name "circleci.com"
 
 # 构建
 npm run build
