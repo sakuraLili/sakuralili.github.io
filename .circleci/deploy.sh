@@ -3,6 +3,7 @@
 # 终止一个错误
 set -e
 
+git pull
 # 构建
 npm run build
 
