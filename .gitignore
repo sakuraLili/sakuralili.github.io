@@ -1,6 +1,7 @@
+.git
 .DS_Store
+docs/.vuepress/dist/.git
 node_modules
-docs/.vuepress/dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -14,4 +15,3 @@ test/
 *.ntvs*
 *.njsproj
 *.sln
-.git
