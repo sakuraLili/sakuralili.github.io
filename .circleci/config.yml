@@ -33,6 +33,9 @@ jobs:
       - image: circleci/node:latest
       - image: bash:4.4.19
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "3e:7f:da:b6:a7:b9:6c:14:cf:1a:2d:95:2b:01:6b:9b"
       - run: echo "==============部署开始=================="
       - attach_workspace:
           at: /tmp/workspace
@@ -44,9 +47,6 @@ jobs:
           name: Deploy Over SSH
           command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
-      - add_ssh_keys:
-          fingerprints:
-            - "3e:7f:da:b6:a7:b9:6c:14:cf:1a:2d:95:2b:01:6b:9b"
 
 workflows:
   version: 2
