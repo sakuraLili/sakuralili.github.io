@@ -20,7 +20,6 @@ git add -A
 git commit -m 'deploy'
 
 echo "before push"
-yes
 # 如果你想要部署到 https://<USERNAME>.github.io
 git push -f git@github.com:sakuraLili/sakuralili.github.io.git master
 
