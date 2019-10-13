@@ -13,8 +13,8 @@ cd docs/.vuepress/dist
 # 如果你是要部署到自定义域名
 # echo 'www.example.com' > CNAME
 
-git add -A
-git commit -m 'deploy'
+# git add -A
+# git commit -m 'deploy'
 
 # 如果你想要部署到 https://<USERNAME>.github.io
 # git push -f git@github.com:sakuraLili/sakuralili.github.io.git release
