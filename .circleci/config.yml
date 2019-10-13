@@ -38,6 +38,9 @@ jobs:
           at: /tmp/workspace
       - run: pwd && ls -al
       - run:
+          name: get bash permission
+          command: chmod 755 ./.circleci/deploy.sh
+      - run:
           name: Deploy Over SSH
           command: ./.circleci/deploy.sh
       - run: echo "==============部署完成=================="
