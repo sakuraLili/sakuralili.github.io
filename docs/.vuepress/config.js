@@ -22,8 +22,10 @@ module.exports = {
       '/blog/': [
         'JavaScript/',
         'CSS/',
+        'Vue/',
         'functional/',
-        'question/'
+        'question/',
+        'other/',
       ]
     },
     lastUpdated: 'Last Updated'
