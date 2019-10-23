@@ -61,3 +61,7 @@ mklink "C:\Program Files\Git\bin\msys-iconv-2.dll" "C:\Program Files\git\usr\bin
 
 mklink "C:\Program Files\Git\bin\msys-intl-8.dll" "C:\Program Files\git\usr\bin\msys-intl-8.dll"
 ```
+
+### 参考文献
+
+[` Jenkins pipeline sh fail with “cannot run program nohup” on windows `](https://stackoverflow.com/questions/45140614/jenkins-pipeline-sh-fail-with-cannot-run-program-nohup-on-windows)
