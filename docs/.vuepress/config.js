@@ -23,6 +23,7 @@ module.exports = {
         'JavaScript/',
         'CSS/',
         'Vue/',
+        'HTML/',
         'functional/',
         'question/',
         'other/',
