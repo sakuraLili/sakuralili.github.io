@@ -25,6 +25,7 @@ module.exports = {
         'Vue/',
         'HTML/',
         'functional/',
+        'charts/',
         'question/',
         'other/',
       ]
