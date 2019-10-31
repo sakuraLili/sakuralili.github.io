@@ -21,4 +21,30 @@
 - [CSS in JS](http://michelebertoli.github.io/css-in-js/)风格爆发了，但有人却对此产生了[疑问](http://bradfrost.com/blog/link/whats-wrong-with-css-in-js/)
 - [ES modules](https://caniuse.com/#search=modules)在现代浏览器中已经可用，[动态导入](https://v8.dev/features/dynamic-import#dynamic)也紧随其后，我们甚至看到围绕这一事实的[工具](https://www.pikapkg.com/blog/introducing-pika-pack/)发生了变化。
 - 许多人意识到端到端测试是正确地做测试的起点，这很大程度上要归功于[Cypress](https://www.cypress.io/how-it-works/)
-- 
+- 虽然今年 Webpack 仍被大量使用，但许多开发者发现[Parcel](https://github.com/parcel-bundler/parcel)更容易启动和运行。
+- 今年被问到的最重要的问题之一就是[JavaScript的成本](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)是多少
+- 今年 Babel 7 发布了，这可是一件大事情，因为距离上一次的大版本快三年了
+- 人们意识到JavaScript改变太快太多的事实之后，开始[谈论](https://www.robinwieruch.de/javascript-fundamentals-react-requirements)当你在学习一些东西之前，比如React，你需要知道些什么。竞争是实实在在的。
+- 许多开发者通过[ Apollo ](https://www.apollographql.com/)发现了 GraphQL，并[认为](https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fblog.bitsrc.io%2Fwhy-does-everyone-love-graphql-17de7f99f05a)它是下一个的数据 API 的发展方向
+- 在NPM和Yarn上Gulp及其相关工具退居二线，但这并未能阻止微软与[Just](https://github.com/Microsoft/just)合作。
+- 今年，人们不仅可以lint/hint HTML、CSS和JavaScript，还可以[对Web自身lint/hint](https://webhint.io/)。
+- 如果只是想要知道 jQuery 仍然被多少人使用，那么[ 2018 前端工具调查](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2018-results)还是值得一读的
+- 不可否认的是，今年 TypeScript 获得了大量用户
+- VScode成为了代码编辑器的[首选](https://triplebyte.com/blog/editor-report-the-rise-of-visual-studio-code)。
+
+## 展望 2019
+
+- "[远离Sass](https://cathydutton.co.uk/posts/why-i-stopped-using-sass/)", 这很有期望实现
+- 通过 [https://cssdb.org](https://cssdb.org/)来关注和学习CSS中即将新增和可能新增的内容仍然是一个好主意
+- Google的[WebP](https://developers.google.com/speed/webp/)图像格式今年可能得到[现代浏览器的支持](https://caniuse.com/#feat=webp)。
+- [Prepack](https://prepack.io/)将会继续发展
+- [GraphQL](https://graphql.org/)将继续被大量使用
+- [JavaScript 现状](https://stateofjs.com/)调查的作者在今年将增加[CSS现状](https://stateofcss.com/)调查
+- 继续关注[Web动画API](https://caniuse.com/#feat=web-animation)
+- 你认识的一些人将试图说服你使用TypeScript
+-  [swc-project](https://github.com/swc-project/swc)将会和Babel形成一些的竞争
+- [JAMstack](https://jamstack.org/)的场景将继续
+- [将继续追求一套代码多端运行](https://quasar.dev/)
+- 对于大型代码库，更多的开发者将转向语言，比如[ ReasonML](https://www.imaginarycloud.com/blog/reasonml-react-as-first-intended/)，而不是使用JavaScript或TypeScript
+- 此外，被广泛使用的项目将开始操作原生DOM的方式来取代JQuery，
+- [Web组件](https://developer.mozilla.org/en-US/docs/Web/Web_Components)，在这点上，我不知道它将Web组件是如何作用的。事实是，他们走不远，并且，一旦停止炒作，他们都还没有得到大量的动力和使用
