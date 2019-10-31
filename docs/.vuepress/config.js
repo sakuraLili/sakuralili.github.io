@@ -14,15 +14,12 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '个人文章', link: '/blog/' },
-      { text: '学习资源', link: '/resource' },
-      { text: '前端学习手册', link: '/handbook'}
+      { text: '学习资源', link: '/resource/' },
+      { text: '前端学习手册', link: '/handbook/'}
     ],
     // sidebar: 'auto',
     displayAllHeaders: true,
     sidebar: {
-      '/handbook/': [
-        ''
-      ],
       '/blog/': [
         'JavaScript/',
         'CSS/',
@@ -32,7 +29,10 @@ module.exports = {
         'charts/',
         'question/',
         'other/',
-      ]
+      ],
+      '/handbook/': [
+        'chapter-0/'
+      ],
     },
     lastUpdated: 'Last Updated'
   }
