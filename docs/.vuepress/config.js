@@ -20,6 +20,12 @@ module.exports = {
     // sidebar: 'auto',
     displayAllHeaders: true,
     sidebar: {
+      '/resource/': [
+        'tools.md'
+      ],
+      '/handbook/': [
+        'chapter-0.md'
+      ],
       '/blog/': [
         'JavaScript/',
         'CSS/',
@@ -29,10 +35,7 @@ module.exports = {
         'charts/',
         'question/',
         'other/',
-      ],
-      '/handbook/': [
-        'chapter-0/'
-      ],
+      ]
     },
     lastUpdated: 'Last Updated'
   }

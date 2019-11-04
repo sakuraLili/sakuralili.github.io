@@ -1,4 +1,3 @@
-# handbook
 # 2019 前端开发者手册
 
 作者： [Cody Lindley](http://codylindley.com/)
