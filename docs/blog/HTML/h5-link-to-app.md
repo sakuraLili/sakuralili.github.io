@@ -140,7 +140,7 @@ const url = 'http://image.baidu.com/qrcode.jpg'
 
 结果如图：
 
-![image from dependency](../../.vuepress/public/images/h5-link-to-app/7.gif)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/gif.gif)
 
 最后一个打开微信就简单了
 

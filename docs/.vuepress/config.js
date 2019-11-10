@@ -21,7 +21,8 @@ module.exports = {
     displayAllHeaders: true,
     sidebar: {
       '/resource/': [
-        'tools.md'
+        'tools.md',
+        'api.md'
       ],
       '/handbook/': [
         'chapter-0.md'

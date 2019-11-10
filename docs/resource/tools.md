@@ -19,6 +19,7 @@
 - [Waves](https://github.com/fians/Waves): 点击出现波纹动画
 - [Move.js](https://github.com/visionmedia/move.js): 一个小型的JavaScript 库，可以使 CSS3 动画更加简单和优雅
 - [Velocity.js](https://github.com/julianshapiro/velocity): Velocity是一个动画引擎，它有着和jQuery的$.animate()类似的API
+- [lax.js](https://github.com/alexfoxy/laxxx): 简单、轻量的JavaScript库，在页面滚动时，创建流畅、漂亮的动画
 
 ## 滚动库
 
@@ -79,6 +80,7 @@
 
 - [Moment.js](https://momentjs.com/): 一个解析，验证，操作和显示日期和时间的 JavaScript 类库
 - [timeago.js](https://github.com/hustcc/timeago.js): 轻量的时间格式化库
+- [Day.js](https://github.com/iamkun/dayjs): Moment.js 的 2kB 轻量化方案，拥有同样强大的 API
 
 ## 表单验证
 
@@ -164,6 +166,10 @@
 
 - [WebUploader](https://github.com/fex-team/webuploader/): 一个简单的以HTML5为主，FLASH为辅的现代文件上传组件
 
+## 文件下载
+
+- [FileSaver.js](https://github.com/eligrey/FileSaver.js): 一种客户端保存文件的解决方案
+
 ## 前端国际化 i18n
 
 - [i18next](https://github.com/i18next/i18next): 用于浏览器和其他JavaScript环境(Node.js)的国家化框架
@@ -196,6 +202,7 @@
 - [Color Thief](https://github.com/lokesh/color-thief): 在浏览器和Node.js中，用 JavaScript.Works抓取图片的颜色
 - [Vibrant.js](https://github.com/jariz/vibrant.js): 它是Android Palette的一个JS移植，能提取图片的主题色
 - [node-vibrant](https://github.com/akfish/node-vibrant): 提取图片的主题色，能在Node.js中浏览器中使用，支持browserify和webpack，支持WebWorker
+- [grade.js](https://github.com/benhowdle89/grade): 提取图片的前两种主题色生产渐变主题色
 
 ## 前端存储
 
