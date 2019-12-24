@@ -20,6 +20,6 @@ git commit -m 'deploy'
 
 echo "before push"
 # 如果你想要部署到 https://<USERNAME>.github.io
-git push -f git@github.com:one-pencil/one-pencil.github.io.git release
+git push -f git@github.com:one-pencil/one-pencil.github.io.git master
 echo "after push"
 cd -
