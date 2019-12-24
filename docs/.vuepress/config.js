@@ -25,7 +25,8 @@ module.exports = {
         'api.md'
       ],
       '/handbook/': [
-        'chapter-0.md'
+        'chapter-0.md',
+        'chapter-1.md'
       ],
       '/blog/': [
         'JavaScript/',
