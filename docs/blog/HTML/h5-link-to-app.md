@@ -52,7 +52,7 @@ url=HTTPS://QR.ALIPAY.COM/XXXXXXXX    // 支付宝收款二维码地址
 使用下面的链接：
 
 ```
-alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228480059016257871&bankAccount=xxx&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx
+alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228xxxxxxxxxxxxxxx&bankAccount=xxx&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx
 ```
 
 参数：
@@ -61,7 +61,7 @@ alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&ca
 appId=09999988   // 应用ID - 默认
 actionType=toCard // 转账类型 toCard - 到银行卡
 sourceId=bill // ？
-cardNo=6228480059016257871 // 银行卡号
+cardNo=6228xxxxxxxxxxxxxxx // 银行卡号
 bankAccount=xxx // 银行账户
 money=0.01 // 转账金额
 amount=0.01 // 转账额度
@@ -81,7 +81,7 @@ bankName=xxx // 银行名称
 后来发现去掉参数` bankAccount `就不会有警告了：
 
 ```
-alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228480059016257871&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx
+alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228xxxxxxxxxxxxxxx&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx
 ```
 
 生成二维码如下：
@@ -100,7 +100,7 @@ alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&ca
 也就是说在移动端打开支付宝转账到银行卡使用下面的链接：
 
 ```
-alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228480059016257871&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx
+alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228xxxxxxxxxxxxxxx&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx
 ```
 
 就只能通过直接扫二维码才有用，不能直接使用` a `标签，而且这也不符合我们的场景。
@@ -116,7 +116,7 @@ alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&ca
 这一步其实就是第一种方式：
 
 ```js
-const qrcode = 'alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228480059016257871&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx'
+const qrcode = 'alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228xxxxxxxxxxxxxxx&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx'
 ```
 
 第二步：获得二维码地址
@@ -166,7 +166,7 @@ const url = 'http://image.baidu.com/qrcode.jpg'
 - 第一步：设置二维码内容
 
 ```js
-const qrcode = 'alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228480059016257871&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx'
+const qrcode = 'alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&cardNo=6228xxxxxxxxxxxxxxx&money=0.01&amount=0.01&bankMark=ABC&bankName=xxx'
 ```
 
 - 第二步：获得二维码地址
