@@ -1,5 +1,7 @@
 # 其他
 
+[Git 配置问题](git-config.md)
+
 [Nginx+Php本地环境搭建](nginx-php.md)
 
 [翻墙：搬瓦工+shadowsocks](vpn-shadowsocks.md)
