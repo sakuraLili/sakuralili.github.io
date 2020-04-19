@@ -9,7 +9,7 @@ git config --global user.name "Lily"
 npm run build
 
 # 进入生成的构建文件夹
-cd docs/.vuepress/dist
+cd blog/.vuepress/dist
 
 # 如果你是要部署到自定义域名
 # echo 'www.example.com' > CNAME
