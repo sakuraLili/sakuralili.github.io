@@ -3,6 +3,7 @@ title: 前端常用依赖
 date: 2019-10-19
 tags:
   - JavaScript
+  - frontend
 author: lili
 location: shenzhen
 ---

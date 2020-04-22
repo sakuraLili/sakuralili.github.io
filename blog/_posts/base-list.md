@@ -1,8 +1,13 @@
-# 前端技术清单
+---
+title: 前端技术清单
+date: 2019-10-20
+tags:
+  - frontend
+author: lili
+location: shenzhen
+---
 
-## 一、基础
-
-### 1.1 JavaScript
+## JavaScript
 
 [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/) 阮一峰 es5
 
@@ -14,15 +19,13 @@
 
 [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 
-### 1.2 CSS
+## CSS
 
 [css-triggers](https://csstriggers.com/) 给出了不同的CSS属性被更改后会触发像素管道的哪些步骤
 
-### 1.3 浏览器
+## 浏览器
 
-## 二、工程化与工具
-
-### 2.1 Webpack
+## Webpack
 
 [官网](https://webpack.js.org/)
 
@@ -104,7 +107,7 @@
 
 ## Cycle
 
-[Cycle](http://cyclejs.cn/getting-started.html)
+[Cycle](http://cyclejs.cn/getting-started.html) 持续化构建、自动部署
 
 ## 前端性能优化
 
@@ -124,8 +127,6 @@
 
 [Web 前端导航](http://www.alloyteam.com/nav/) 前端资源分类地址
 
-[CSS 3 参考手册](https://www.css88.com/book/css/quicksearch.htm)
-
 [Fundebug](https://www.fundebug.com/)
 
 [Microsoft Azure](https://docs.microsoft.com/zh-cn/azure/app-service/)
@@ -136,4 +137,4 @@
 
 [Ant Design 资源及相关项目](https://github.com/websemantics/awesome-ant-design)
 
-[掘金 2018 报告](https://2018.juejin.im/)
+<!-- [掘金 2018 报告](https://2018.juejin.im/) -->

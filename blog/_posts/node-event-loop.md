@@ -369,4 +369,4 @@ myEmitter.on('event', () => {
 
 [微任务、宏任务与Event-Loop](https://juejin.im/post/5b73d7a6518825610072b42b)
 
-[笔试题——JavaScript事件循环机制（event loop、macrotask、microtask）](https://juejin.im/post/5bac87b6f265da0a906f78d8)
+<!-- [笔试题——JavaScript事件循环机制（event loop、macrotask、microtask）](https://juejin.im/post/5bac87b6f265da0a906f78d8) -->

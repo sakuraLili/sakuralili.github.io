@@ -16,11 +16,11 @@ module.exports = {
     nav: [
       { text: 'Blog', link: '/' },
       { text: 'Tags', link: '/tag/' },
-      { text: '学习资源', link: '/resource/' },
+      { text: '学习资源', link: '/2019/10/20/base-list/' },
       { text: '前端学习手册', link: '/handbook/'}
     ],
     // sidebar: 'auto',
     displayAllHeaders: true,
-    sidebarDepth: 3,
+    sidebarDepth: 4,
   }
 }
