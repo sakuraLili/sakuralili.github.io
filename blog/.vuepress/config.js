@@ -5,22 +5,20 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@alias': './public/images'
-      }
-    }
+        '@alias': './public/images',
+      },
+    },
   },
-  head: [
-    ['link', { ref: 'icon', href: './public/favicon.icon' }]
-  ],
+  head: [['link', { ref: 'icon', href: './public/favicon.icon' }]],
   themeConfig: {
     nav: [
       { text: 'Blog', link: '/' },
       { text: 'Tags', link: '/tag/' },
       { text: '学习资源', link: '/2019/10/20/base-list/' },
-      { text: '前端学习手册', link: '/handbook/'}
+      { text: '前端学习手册', link: '/handbook/' },
+      { text: '读书笔记', link: '/tag/Reading%20Notes/' },
     ],
-    // sidebar: 'auto',
     displayAllHeaders: true,
     sidebarDepth: 4,
-  }
-}
+  },
+};
