@@ -1,6 +1,6 @@
 .git
 .DS_Store
-docs/.vuepress/dist/.git
+blog/.vuepress/dist/.git
 node_modules
 npm-debug.log*
 yarn-debug.log*
