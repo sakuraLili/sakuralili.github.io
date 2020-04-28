@@ -109,6 +109,10 @@ location: shenzhen
 
 [Cycle](http://cyclejs.cn/getting-started.html) 持续化构建、自动部署
 
+## [GraphQL](https://graphql.org/)
+
+[中文版](https://graphql.cn/): 一种用于 API 的查询语言
+
 ## 前端性能优化
 
 [[译] 2019 前端性能优化年度总结 — 第一部分](https://juejin.im/post/5c4418006fb9a049c043545e?utm_source=gold_browser_extension)
