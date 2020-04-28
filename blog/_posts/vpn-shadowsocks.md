@@ -28,7 +28,7 @@ location: shenzhen
 
 打开` git bash `终端，在终端输入命令**ssh root@IP地址 -p ssh端口**，其中` IP `地址和` SSH ` 端口换成上图中的` Public IP address `和` SSH Port `信息
 
-```shell
+```sh
 ssh root@111.11.111.111 -p 1111
 ```
 
@@ -38,7 +38,7 @@ ssh root@111.11.111.111 -p 1111
 
 ##### 1. 等到出现` root@host ~ `字样，执行命令
 
-```shell
+```sh
 wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
 ```
 
@@ -46,19 +46,19 @@ wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.
 
 ##### 2. 等待上一步的命令执行结束后，继续执行命令
 
-```shell
+```sh
 chmod +x shadowsocks-all.sh
 ```
 
 ##### 3. 等待上一步的命令执行结束后，继续执行命令
 
-```shell
+```sh
 ./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 ```
 ##### 4. 根据需要选择，不懂的话直接选1，或者默认回车。下面会提示你输入你的 SS SERVER 的密码和端口。不输入就是默认。跑完命令后会出来你的 SS 客户端的信息。
 
 
-```shell
+```sh
 Which Shadowsocks server you’d select:
 1) Shadowsocks-Python
 2) ShadowsocksR
@@ -86,7 +86,7 @@ port = 11260
 
 这样的话我们就在搬瓦工` VPS `主机上完成了` SS ` 的手动安装，记录保存好你的上述信息：` Server IP `、` Server Port `、` Password `、` Encryption Method `，我们就可以在不同的设备终端找到相应的` SS ` 进行安装设置使用了。
 
-```shell
+```sh
 INFO: loading config from /etc/shadowsocks-python/config.json
 2019-03-28 05:14:24 INFO     loading libcrypto from libcrypto.so.10
 Starting Shadowsocks success

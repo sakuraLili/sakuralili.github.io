@@ -9,12 +9,12 @@ location: shenzhen
 
 最近在` Mac `上使用` npm `安装全局包:
 
-```shell
+```sh
 npm install -g yarn react-native-cli
 ```
 结果就出现了下面的问题：
 
-```shell
+```sh
 WH-JSdeMacBook-Pro-2:ReactNativeDemo wh-js$ npm install -g yarn react-native-cli
 npm WARN checkPermissions Missing write access to /usr/local/lib/node_modules
 npm ERR! path /usr/local/lib/node_modules
@@ -43,6 +43,6 @@ npm ERR!     /Users/wh-js/.npm/_logs/2019-07-15T02_17_29_666Z-debug.log
 
 解决方法：在安装命令前加上` sudo `就可以了
 
-```shell
+```sh
 sudo npm install -g yarn react-native-cli
 ```

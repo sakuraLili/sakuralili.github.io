@@ -59,7 +59,7 @@ java.io.IOException: Cannot run program "nohup" (in directory "C:\Users\king\.je
 - 将` C:\Program Files\Git\bin `注册到环境变量下， 注意注册环境变量后，可能需要重启才能生效，我重启后就没报错了。
 - 在使用` git-bash `时，使` nohup `对` Jenkins `可用。以管理员身份运` 行windows cmd `，然后输入下列命令：
 
-```shell
+```sh
 mklink "C:\Program Files\Git\bin\nohup.exe" "C:\Program Files\git\usr\bin\nohup.exe"
 
 mklink "C:\Program Files\Git\bin\msys-2.0.dll" "C:\Program Files\git\usr\bin\msys-2.0.dll"

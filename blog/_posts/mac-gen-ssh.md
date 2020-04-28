@@ -9,7 +9,7 @@ location: shenzhen
 
 - 打开终端查看是否已经存在` SSH `密钥
 
-```shell
+```sh
 cd ~/.ssh
 ```
 
@@ -17,7 +17,7 @@ cd ~/.ssh
 
 - 生成新的秘钥, 命令如下
 
-```shell
+```sh
 ssh-keygen -t rsa -C "youremail@example.com"
 ```
 
@@ -25,7 +25,7 @@ ssh-keygen -t rsa -C "youremail@example.com"
 
 - 到ssh目录下打开.ssh
 
-```shell
+```sh
 cd ~/.ssh
 open .
 ```

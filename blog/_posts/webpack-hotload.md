@@ -9,7 +9,7 @@ location: shenzhen
 
 最近用` webpack `热加载项目时经常挂掉，并报:
 
-```shell
+```sh
 webpack:CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
 ```
 

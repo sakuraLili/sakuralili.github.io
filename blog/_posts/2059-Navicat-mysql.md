@@ -19,7 +19,7 @@ mysql 8 之前的版本中加密规则是 mysql_native_password ,而在 mysql8 �
 
 解决: 更改加密规则
 
-```shell
+```sh
 mysql -uroot -ppassword #登录
 
 use mysql; #选择数据库
