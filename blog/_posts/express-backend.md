@@ -644,6 +644,6 @@ app.use(baseMiddleware(app));
 
 [源代码](https://github.com/I-pencil/express-backend)，戳！戳！戳！
 
-<!-- ## 参考文献 -->
+## 参考文献
 
-<!-- [Vue+Express+Mysql 全栈初体验](https://juejin.im/post/5ce96694f265da1bc5523f69#heading-9) -->
+[Vue+Express+Mysql 全栈初体验](https://juejin.im/post/5ce96694f265da1bc5523f69#heading-9)
