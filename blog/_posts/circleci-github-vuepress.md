@@ -9,13 +9,13 @@ author: lili
 location: shenzhen
 ---
 
-[GitHub](https://github.com/) 能托管软件项目,对个人开发者十分友好，并且它还提供了[GitHub Pages](https://pages.github.com/) 功能，让我们可以搭建我们自己的个人博客网站。
+[GitHub](https://github.com/) 能托管软件项目,对个人开发者来说十分友好，并且它还提供了[GitHub Pages](https://pages.github.com/) 功能，让我们可以搭建我们自己的个人博客网站。
 
 ## 关联账户
 
-既然是构建自己的博客网站，就首先有博客仓库，并且将仓库托管到GitHub上。这里是使用[VuePress](https://www.vuepress.cn/)来搭建我们的博客。
+既然是构建自己的博客网站，就首先有博客仓库，并且将仓库托管到` GitHub `上。这里是使用[VuePress](https://www.vuepress.cn/)来搭建我们的博客。
 
-然后在[CircleCI](https://circleci.com/)上，用 ***GitHub账号*** 登录CircleCI。登录后，就可以将我们的GitHub仓库和CircleCI起来
+然后在[CircleCI](https://circleci.com/)上，用 ***GitHub账号*** 登录` CircleCI `。登录后，就可以将我们的` GitHub `仓库和` CircleCI `连接起来
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/01.png)
 
@@ -23,7 +23,7 @@ location: shenzhen
 
 1. 创建密钥
 
-通常我们都是使用 ssh-keygen -t rsa 创建公钥(.pub)和私钥，但是在CircleCI上添加密钥时会报错：
+通常我们都是使用` ssh-keygen -t rsa `创建公钥(` .pub `)和私钥，但是在` CircleCI `上添加密钥时会报错：
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/02.png)
 
@@ -35,25 +35,25 @@ ssh-keygen -m PEM -t rsa -C "email@example.com"
 
 2. 添加密钥
 
-生成了ssh 密钥后，我们需要将密钥添加到CircleCI上，将公钥添加到GitHub上。
+生成了` ssh `密钥后，我们需要将密钥添加到` CircleCI `上，将公钥添加到` GitHub `上。
 
-GitHub 添加公钥就不说了，这里只说 CircleCI 添加密钥。
+` GitHub `添加公钥就不说了，这里只说` CircleCI `添加密钥。
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/03.gif)
 
-> 添加密钥时，Hostname 需要填 github.com
+> 添加密钥时， Hostname 需要填 github.com
 
-密钥添加完后，就可以看到：
+密钥添加完后，就可以看到列表这里有了内容：
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/06.png)
 
-GitHub 添加完后：
+` GitHub `添加完后：
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/07.png)
 
-可以看到 CircleCI 和GitHub 上 fingerprints 是相同的。
+可以看到` CircleCI `和` GitHub `上` fingerprints `是相同的。
 
-其中，fingerprints 我们是需要添加到构建步骤里的:
+其中，` fingerprints `我们是需要添加到构建步骤里的:
 
 ```yml
 steps:
@@ -64,7 +64,7 @@ steps:
 
 ## 构建配置
 
-在项目根目录下新建文件夹.circleci，然后再新建两个文件，目录就是这样：
+在项目根目录下新建文件夹` .circleci `，然后再新建两个文件，目录就是这样：
 
 ```
 |-- blog // 项目名称
@@ -74,9 +74,9 @@ steps:
 
 ```
 
-其中，config.yml文件是配置文件，deploy.sh是部署脚本.
+其中，` config.yml `文件是配置文件，` deploy.sh `是部署脚本.
 
-部署脚本在VuePress有[教程](https://www.vuepress.cn/guide/deploy.html#github-pages):
+部署脚本在` VuePress `有[教程](https://www.vuepress.cn/guide/deploy.html#github-pages):
 
 ```sh
 #!/usr/bin/env sh
@@ -104,7 +104,7 @@ echo "after push"
 cd -
 ```
 
-然后在CircleCI里可以看到部署任务列表和部署详情：
+然后在` CircleCI `里可以看到部署任务列表和部署详情：
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/12.png)
 
@@ -114,7 +114,7 @@ cd -
 
 #### 1. The authenticity of host 'github.com' can't be established
 
-当CircleCI服务器尝试连接到GitHub的主机时，它可能会提示验证主机密钥。提示是自动化的氪星石：CI环境将无限期挂起，等待用户给出响应。这时我们就只能取消Job：
+当` CircleCI `服务器尝试连接到` GitHub `的主机时，它可能会提示验证主机密钥。提示是自动化的氪星石：CI环境将无限期挂起，等待用户给出响应。这时我们就只能取消` Job `：
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/08.png)
 
@@ -126,7 +126,7 @@ cd -
 
 #### 2. GitHub does not provide shell access
 
-因为这里我们需要执行脚本，但是GitHub可能会提示没有权限。
+这里我们需要执行脚本，但是` GitHub `可能会提示没有权限。
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/10.png)
 
@@ -143,7 +143,7 @@ cd -
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/09.png)
 
-这个简单，只需要按照提示，在部署脚本里加上Git配置就可以了。
+这个简单，只需要按照提示，在部署脚本里加上` Git `配置就可以了。
 
 ## 最终部署脚本
 
@@ -214,7 +214,7 @@ workflows:
               only: release
 ```
 
-> 这里我使用release分支作为部署分支，因为使用VuePress时，构建后，项目的目录会不同，然后push 到 master分支后，项目就改变了。再次push 时，它会要求我们先从 master 分支上 pull最新代码，这不是我想要的结果，所以用release分支作为部署分支。
+> 这里我使用 release 分支作为部署分支，因为使用 VuePress 时，构建后，项目的目录会不同，然后 push 到 master 分支后，项目就改变了。再次 push 时，它会要求我们先从 master 分支上 pull 最新代码，这不是我想要的结果，所以用 release 分支作为部署分支。
 
 - deploy.sh
 
@@ -248,4 +248,4 @@ echo "after push"
 cd -
 ```
 
-配置好了之后，我们每次push代码到release分支时，就会自动构建啦，打开我们的个人GitHub Pages网站时，就可以看到我们的博客网站啦。
+配置好了之后，我们每次` push `代码到` release `分支时，就会自动构建啦，打开我们的个人` GitHub Pages `网站时，就可以看到我们的博客网站啦。
