@@ -64,4 +64,7 @@ steps:
 
 ## 遇到的问题
 
-1. The authenticity of host 'github.com (140.82.113.3)' can't be established
+1. The authenticity of host 'github.com' can't be established
+
+![image from dependency](../.vuepress/public/images/circleci-github-vuepress/08.png)
+
