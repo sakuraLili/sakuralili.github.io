@@ -8,6 +8,21 @@ author: lili
 location: shenzhen
 ---
 
+## 重写数字输入框箭头样式
+
+```less
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+//清除input上下小箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+```
+
 ## 移动端常用样式
 
 ```less

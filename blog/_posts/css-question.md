@@ -8,6 +8,27 @@ author: lili
 location: shenzhen
 ---
 
+## 清除` Firefox `浏览器中输入框红色问题
+
+**原因：**
+
+如果一个表单控件具有` required `属性，当这个控件失效时，` Firefox `会自动为表单控件加上红色的边框。
+
+**解决：**
+
+```css
+input,
+textarea,
+select {
+  appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  -moz-outline: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+}
+```
+
 ## 解决字体自动放大问题（偶尔出现）
 
 关键字：**Font Boosting**

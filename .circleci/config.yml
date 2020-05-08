@@ -33,9 +33,6 @@ jobs:
       - image: circleci/node:latest
       - image: bash:4.4.19
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "80:b8:2a:23:cc:41:46:f3:e7:00:f3:79:91:30:6c:28"
       - run: echo "==============部署开始=================="
       - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - attach_workspace:
