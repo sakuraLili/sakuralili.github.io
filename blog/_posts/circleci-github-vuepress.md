@@ -62,9 +62,12 @@ steps:
         - "80:b8:2a:XX:XX:XX:XX:XX:6c:28"
 ```
 
+## 构建配置
+
+
+
 ## 遇到的问题
 
-1. The authenticity of host 'github.com' can't be established
+#### 1. The authenticity of host 'github.com' can't be established
 
 ![image from dependency](../.vuepress/public/images/circleci-github-vuepress/08.png)
-
