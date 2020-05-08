@@ -13,7 +13,7 @@ location: shenzhen
 
 ## 关联账户
 
-既然是构建自己的博客网站，就首先有博客仓库，并且将仓库托管到` GitHub `上。这里是使用[VuePress](https://www.vuepress.cn/)来搭建我们的博客。
+既然是构建自己的博客网站，就首先要有博客仓库，并且将仓库托管到` GitHub `上。这里是使用[VuePress](https://www.vuepress.cn/)来搭建我们的博客。
 
 然后在[CircleCI](https://circleci.com/)上，用 ***GitHub账号*** 登录` CircleCI `。登录后，就可以将我们的` GitHub `仓库和` CircleCI `连接起来
 
