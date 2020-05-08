@@ -34,13 +34,9 @@ jobs:
       - image: bash:4.4.19
     steps:
       - run: echo "==============部署开始=================="
-      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - attach_workspace:
           at: /tmp/workspace
       - run: pwd && ls -al
-      - run:
-          name: get bash permission
-          command: chmod 755 ./.circleci/deploy.sh
       - run:
           name: Deploy Over SSH
           command: ./.circleci/deploy.sh
