@@ -51,6 +51,67 @@ html {
 }
 ```
 
+## 实现箭头
+
+```html
+<div>
+  <span class="arrow-down"></span>
+  <span class="arrow-up"></span>
+  <span class="arrow-left"></span>
+  <span class="arrow-right"></span>
+</div>
+```
+
+```css
+span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin: 20px;
+}
+span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid;
+  border-color: black black transparent transparent;
+}
+
+.arrow-down::after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg);
+}
+
+.arrow-up::after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg);
+}
+
+.arrow-right::after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(0deg);
+}
+
+.arrow-left::after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
+}
+```
+![image from dependency](../.vuepress/public/images/css-code-collection/01.png)
+
+## 文章超出...
+
+```less
+.multiline-ellipsis {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; // 文章显示几行
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
+
 ## 渐变色文字
 
 ```html
@@ -140,51 +201,3 @@ html {
 效果:
 
 ![image from dependency](../.vuepress/public/images/css-tips/4.png)
-
-## 实现箭头
-
-```html
-<div>
-  <span class="arrow-down"></span>
-  <span class="arrow-up"></span>
-  <span class="arrow-left"></span>
-  <span class="arrow-right"></span>
-</div>
-```
-
-```css
-span {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  margin: 20px;
-}
-span::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px solid;
-  border-color: black black transparent transparent;
-}
-
-.arrow-down::after {
-  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg);
-}
-
-.arrow-up::after {
-  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg);
-}
-
-.arrow-right::after {
-  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(0deg);
-}
-
-.arrow-left::after {
-  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
-}
-```
-![image from dependency](../.vuepress/public/images/css-code-collection/01.png)

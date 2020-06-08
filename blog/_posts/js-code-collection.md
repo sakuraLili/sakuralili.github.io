@@ -88,6 +88,25 @@ downloadFile (content, fileName) {
 }
 ```
 
+## 将数据解压缩
+
+```js
+const unzip = function(b64Data) {
+  const strData = atob(b64Data);
+  // Convert binary string to character-number array
+  const charData = strData.split("").map(function(x) {
+    return x.charCodeAt(0);
+  });
+  // Turn number array into byte-array
+  const binData = new Uint8Array(charData);
+  // // unzip
+  const data = pako.inflate(binData);
+  // Convert gunzipped byteArray back to ascii string:
+  strData = String.fromCharCode.apply(null, new Uint16Array(data));
+  return strData;
+};
+```
+
 ## 将` HTML `页面的` title `设置为空字符串
 
 一些 HTML 页面的设计是没有标题的，但是将设置 document.title = '' 时，页面的标题是当前页面的 url, 还是不符合要求
