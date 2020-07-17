@@ -58,6 +58,53 @@ function commafy(num){
   }
 ```
 
+## 获取数组交集
+
+```js
+const getIntersection = (a, ...args) => a.filter(itemA => args.every(b => b.includes(itemA)))
+```
+
+## 去掉字符串空格
+
+```js
+// 字符串去掉首尾空格
+str.replace(/^\s+|\s+$/g, '')
+
+// 字符串去掉开头空格
+str.replace(/^(\s*)(.*)$/, '$2')
+
+// 字符串去掉结尾空格
+str.replace(/^(.*?)(\s*)$/, '$1')
+```
+
+## 获取元素类型
+
+```js
+const dataType = obj => Object.prototype.toString.call(obj).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
+```
+
+## input 限制只能输入中文
+
+```js
+const input = document.querySelector('input[type="text"]')
+const clearText = target => {
+    const {
+        value
+    } = target
+    target.value = value.replace(/[^\u4e00-\u9fa5]/g, '')
+}
+input.oninput = ({target}) => {
+    clearText(target)
+}
+```
+
+## 去除字符串中的html代码
+
+```js
+const removeHTML = (str = '') => str.replace(/<[\/\!]*[^<>]*>/ig, '')
+console.log(removeHTML('<h1>哈哈哈哈<呵呵呵</h1>')) // 哈哈哈哈<呵呵呵
+```
+
 ## 浏览器中保存格式为base64的图片
 
 ```js

@@ -9,6 +9,8 @@ location: shenzhen
 
 ## JavaScript
 
+[ECMAScript® 2021 Language Specification](https://tc39.es/ecma262) JavaScript 官方语言规范
+
 [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/) 阮一峰 es5
 
 [JavaScript 教程](https://wangdoc.com/javascript/index.html) 阮一峰 es5
