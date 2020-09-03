@@ -14,24 +14,24 @@ location: shenzhen
 
 下面是一个值：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/1.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/1.png)
 
 我们都知道怎么运用一个函数到这个值上面：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/2.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/2.png)
 
 > 备注：图中` (+3) `表示的是一个进行加` 3 `操作的函数
 
 很简单。让我们扩展一下，==任何值都可以被放入一个上下文中==。所以现在你可以将上下文想象成一个盒子，你可以将一个值放进这个盒子中。
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/3.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/3.png)
 
 
 现在当你在这个值上使用函数时，根据不同的上下文，你会得到不同的结果，这就是` Functor `、` Applicative `、` Monad `和` Arrow `等的基础概念。如图：数据类型 ` Maybe `定义了两个相关的上下文。
 
 > 数据类型就是对值的一种封装，不仅包括值本身，还包括相关的属性和方法。上图就是2的封装，从此2就不是一个单纯的值，而是一种数据类型的实例，只能在数据类型的场景（context）中使用。
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/4.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/4.png)
 
 ```
 data Maybe a = Nothing | Just a
@@ -43,7 +43,7 @@ data Maybe a = Nothing | Just a
 
 当一个值被封装在一个上下文里, 你就不能拿普通函数来应用:
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/5.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/5.png)
 
 这时，` fmap `出现了，` fmap ` 知道怎样将一个函数应用到一个带有上下文的值，举个例子，也许你想将` (+3) `运用到` Just 2 `上面，使用` fmap `：
 
@@ -52,7 +52,7 @@ data Maybe a = Nothing | Just a
 Just 5
 ```
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/6.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/6.png)
 
 ` fmap `让我们知道它怎么做到的，但是` fmap `怎么知道怎么将函数运用到这个值上？
 
@@ -60,13 +60,13 @@ Just 5
 
 ` Functor `是一种[` typeclass ` ](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)，下面是它的定义：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/7.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/7.png)
 
 > ` typeclass `是一类定义了一些行为的接口。如果一种数据类型是` typeclass `，那么这种数据类型就支持和执行在` typeclass `中描述的行为。
 
 一个` Functor `是定义了` fmap `的工作原理的任何数据类型，下面就描述了` fmap `怎么工作的：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/8.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/8.png)
 
 所以我们可以这样做：
 
@@ -85,11 +85,11 @@ instance Functor Maybe where
 
 当我们写下` fmap (+3) (Just 2) `时，它正发生着下面的事情：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/9.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/9.png)
 
 所以接下来你很喜欢已有的` fmap `，但是当你运用` (+3) `到` Nothing `上呢？
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/10.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/10.png)
 
 ```
 > fmap (+3) Nothing
@@ -98,7 +98,7 @@ Nothing
 
 另一个例子，当你运用一个函数到一个` list `上面会发生什么呢？
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/11.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/11.png)
 
 ` Lists `也是` functor `，下面是它的定义：
 
@@ -115,11 +115,11 @@ fmap (+3) (+1)
 
 下面是一个函数
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/12.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/12.png)
 
 下面是一个函数应用到另一个函数上面：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/13.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/13.png)
 
 结果也是另外一个函数：
 
@@ -145,15 +145,15 @@ instance Functor ((->) r) where
 
 ` Applicative `把它带到了一个新的层次。使用` Applicative `，我们的值放在上下文中，就像` Functor `：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/14.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/14.png)
 
 而且我们的函数也可以放入上下文中：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/15.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/15.png)
 
 完全理解` Applicative `并不是开玩笑，` Control.Applicative `定义了` <*> `, 这个函数知道怎样把封装在上下文里的函数应用到封装在上下文里的值上面:
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/16.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/16.png)
 
 也就是
 
@@ -168,7 +168,7 @@ Just (+3) <*> Just 2 == Just 5
 [2, 4, 6, 4, 5, 6]
 ```
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/17.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/17.png)
 
 这里有一些是你能用` Applicative `做, 而无法用` Functor `做到的. 你怎么才能把需要两个参数的函数应用到两个封装的值上呢?
 
@@ -213,17 +213,17 @@ Just 15
 
 ` Functor `应用函数到封装过的值:
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/18.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/18.png)
 
 ` Applicative `运用封装过的函数到封装过的值上面：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/19.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/19.png)
 
 ` Monad `运用一个返回封装过的值的函数到一个封装过的值上，` Monad `有一个函数` >>= `（发音"` bind `"）来做这件事。
 
 让我们来看一个例子，熟悉的` Maybe `是一个` monad `：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/20.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/20.png)
 
 假设` half `是仅仅对偶数才可用的函数：
 
@@ -233,15 +233,15 @@ half x = if even x
            else Nothing
 ```
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/21.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/21.png)
 
 如果我们传给它一个封装过的值会发生什么？
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/22.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/22.png)
 
 我们需要使用` >>= `将封装过的值挤进这个函数，下面是` >>= `的图片：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/33.jpg)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/33.jpg)
 
 它怎么起作用的:
 
@@ -263,7 +263,7 @@ class Monad m where
 
 下图说明了` >>= `是什么？
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/23.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/23.png)
 
 所以` Maybe `是一个` Monad `：
 
@@ -275,11 +275,11 @@ instance Monad Maybe where
 
 下图就是` Monad `对` Just 3 `发生了什么：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/24.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/24.png)
 
 如果你传给它一个` Nothing `，那就更简单了：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/25.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/25.png)
 
 你也可以级联这个函数：
 
@@ -288,15 +288,15 @@ instance Monad Maybe where
 Nothing
 ```
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/26.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/26.png)
 
 所以现在我们知道了` Maybe `同时是一个` Functor `、` Applicative `和` Monad `。现在让我们开始另一个示例： ` the IO monad `
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/27.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/27.png)
 
 ` 3 `个特别的函数。` getLine `获取用户输入而不接收参数:
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/28.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/28.png)
 
 ```
 getLine :: IO String
@@ -304,7 +304,7 @@ getLine :: IO String
 
 ` readFile `需要一个字符串（文件名）参数，返回这个文件的内容：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/29.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/29.png)
 
 ```
 readFile :: FilePath -> IO String
@@ -312,7 +312,7 @@ readFile :: FilePath -> IO String
 
 ` putStrLn `需要一个字符串参数，并且将它打印出来
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/30.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/30.png)
 
 ```
 putStrLn :: String -> IO ()
@@ -320,7 +320,7 @@ putStrLn :: String -> IO ()
 
 这三个函数都接收一个常规的值 (或者不接收值) 返回一个封装过的值. 我们可以用` >>= `把一切串联起来!
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/31.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/31.png)
 
 ```
 getLine >>= readFile >>= putStrLn
@@ -335,7 +335,7 @@ getLine >>= readFile >>= putStrLn
 
 ` functor `、` applicative `和` monad `之间有什么不同？
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/32.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/32.png)
 
 - ==` functors `==：你可以使用` fmap `或` <$> `将一个函数运用到一个封装的值上
 - ==` applicatives `==：你可以使用` <*> `或` liftA ` 将一个封装过的函数运用到一个封装的值上

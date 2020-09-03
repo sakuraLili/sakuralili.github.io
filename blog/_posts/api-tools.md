@@ -3,7 +3,7 @@ title: 实用API接口
 date: 2019-10-22
 tags:
   - JavaScript
-  - frontend
+  - tools
 author: lili
 location: shenzhen
 ---

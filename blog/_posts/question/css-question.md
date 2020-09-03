@@ -41,17 +41,17 @@ select {
 
 元素` flex-container `是` flex `布局，如图` 1 `，其中，对元素` flex-item-1 `设置` flex:1 `:
 
-![image from dependency](../.vuepress/public/images/css-question/01.png)
+![image from dependency](../../.vuepress/public/images/css-question/01.png)
 
 正常情况,页面应该如下图显示：
 
-![image from dependency](../.vuepress/public/images/css-question/02.png)
+![image from dependency](../../.vuepress/public/images/css-question/02.png)
 
 此时元素` flex-container `高度大于` body `高度，它是可以滚动的。
 
 在大部分机型上显示都是没有问题的，但是在` vivo x7 `上有问题
 
-![image from dependency](../.vuepress/public/images/css-question/03.png)
+![image from dependency](../../.vuepress/public/images/css-question/03.png)
 
 在` vivo x7 `中，元素` flex-container `高度等于` body `高度，元素` flex-item-1 `内容显示不全，页面也无法滚动。
 

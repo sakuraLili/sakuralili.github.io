@@ -9,7 +9,7 @@ location: shenzhen
 
 使用` Navicat `连接` mysql `时报如下错误:
 
-![image from dependency](../.vuepress/public/images/2059-Navicat-mysql/1.png)
+![image from dependency](../../.vuepress/public/images/2059-Navicat-mysql/1.png)
 
 报错的原因是：
 
@@ -32,6 +32,6 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 FLUSH PRIVILEGES; #刷新权限
 ```
 
-![image from dependency](../.vuepress/public/images/2059-Navicat-mysql/2.png)
+![image from dependency](../../.vuepress/public/images/2059-Navicat-mysql/2.png)
 
 再次连接，就可以成功了。

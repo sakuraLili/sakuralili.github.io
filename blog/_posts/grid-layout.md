@@ -2,7 +2,6 @@
 title: Grid Layout
 date: 2020-04-01
 tags:
-  - HTML
   - CSS
 author: lili
 location: shenzhen

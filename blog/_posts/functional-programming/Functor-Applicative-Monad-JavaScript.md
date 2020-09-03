@@ -14,7 +14,7 @@ location: shenzhen
 
 任何值都可以被放入一个上下文中。这个值就好像被放入了盒子中，我们不能直接操作这个值。
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/3.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/3.png)
 
 如图，在上下文（` content `）中，封装着一个值` 2 `。实现这个盒子的代码：
 
@@ -67,7 +67,7 @@ function add(x) {
 add(Just.of(2))
 // 3[object Object]
 ```
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/5.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/5.png)
 
 
 这时，我们就需要一个方法让别的函数能够操作这个值：
@@ -94,7 +94,7 @@ Just.of(2).map((a) => a + 3)
 
 过程如下：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/9.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/9.png)
 
 我们使用` map `方法来操作数据，是为了在数据（比如` 2 `）不脱离数据类型（比如` Just `）的情况下，就可以操作数据，操作结束后，为了防止意外再把它放回它所属的容器（` Just `）。这样，我们能连续地调用` map `，运行任何我们想运行的函数。甚至还可以改变值的类型。
 
@@ -134,7 +134,7 @@ Maybe.of(null).map((a) => a + 3)
 
 当传给` map `的值是` null  ` 时，代码并没有爆出错误。这样我们就能连续使用` map `，保证了一种线性的工作流，不必担心错误的数据造成代码抛出错误。
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/10.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/10.png)
 
 ## ` Monad `
 
@@ -190,7 +190,7 @@ Just { __value: 3 }
 
 这时，我们又将一个被封装过的值运用到一个普通函数上，这又回到了我们最开始的时候。
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/22.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/22.png)
 
 如果此时我们想操作` nestedContainer `容器里的值，那我们就需要` Monad `：
 
@@ -215,7 +215,7 @@ mmo.join();
 
 而对于` half `（` Just 3 `），` Monad `是这样处理的：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/24.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/24.png)
 
 ### 理论
 
@@ -240,7 +240,7 @@ const compose = function(f,g) {
 
 用图表示则是：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad-JavaScript/1.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad-JavaScript/1.png)
 
 
 从左上角往下，先用` join `合并` M(M(M a)) `最外层的两个 ` M `，然后往右，再调用一次` join `，就得到了我们想要的` M a `。或者，从左上角往右，先打开最外层的` M `，用` map(join) `合并内层的两个 ` M `，然后再向下调用一次` join `，也能得到` M a `。不管是先合并内层还是先合并外层的` M `，最后都会得到相同的`  M a `，所以这就是结合律。
@@ -253,7 +253,7 @@ const compose = function(f,g) {
 ```
 用图表示则是：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad-JavaScript/2.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad-JavaScript/2.png)
 
 如果从左上角开始往右，可以看到` of `的确把` M a `丢到另一个` M ` 容器里去了。然后再往下` join `，就得到了` M a `，跟一开始就调用` id `的结果一样。从右上角往左，可以看到如果我们通过` map `进到了` M ` 里面，然后对普通值` a `调用` of `，最后得到的还是` M (M a) `；再调用一次` join `将会把我们带回原点，即` M a `。
 
@@ -261,15 +261,15 @@ const compose = function(f,g) {
 
 ` Functor `可以将封装到上下文里的值运用到普通函数上：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/18.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/18.png)
 
 那如果` (+3) `函数也被封装在容器中：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/15.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/15.png)
 
 那么此时，对容器` Just `里面的值进行加` 3 `操作，就变成了：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/19.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/19.png)
 
 此时是两个` Functor `之间的交互，就需要用到` Applicative `了。
 
@@ -305,13 +305,13 @@ M.of(a).map(f) = F.of(f).ap(M.of(a))
 
 用图表示则是：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad-JavaScript/3.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad-JavaScript/3.png)
 
 上面实际表示的是` map `一个` f `等价于` ap `一个值为` f `的` functor `
 
 ## 总结：
 
-![image from dependency](../.vuepress/public/images/Functor-Applicative-Monad/32.png)
+![image from dependency](../../.vuepress/public/images/Functor-Applicative-Monad/32.png)
 
 - **` Functor `**：你可以使用` map `将一个函数运用到一个封装的值上
 - **` Applicative `**：你可以使用` ap ` 将一个封装过的函数运用到一个封装的值上

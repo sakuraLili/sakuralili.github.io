@@ -20,7 +20,7 @@ location: shenzhen
 
 看图：
 
-![image from dependency](../.vuepress/public/images/node-event-loop/01.png)
+![image from dependency](../../.vuepress/public/images/node-event-loop/01.png)
 
 - 首先我们能看到我们的` js `代码（` APPLICATION `）会先进入` v8 `引擎,` v8 `引擎中主要是一些` setTimeout `之类的方法。
 - 其次如果我们的代码中执行了` nodeApi `，比如` require('fs').read() `，` node `就会交给` libuv `库处理，这个` libuv `库是别人写的，他就是` node `的事件环。
@@ -37,7 +37,7 @@ location: shenzhen
 
 处理` event loop `的过程如图所示：
 
-![image from dependency](../.vuepress/public/images/node-event-loop/02.png)
+![image from dependency](../../.vuepress/public/images/node-event-loop/02.png)
 
 图中每个方框都是` event loop `中的一个阶段。
 
@@ -157,7 +157,7 @@ someAsyncOperation(() => {
 
 看图：
 
-![image from dependency](../.vuepress/public/images/node-event-loop/03.jpg)
+![image from dependency](../../.vuepress/public/images/node-event-loop/03.jpg)
 
 绿色小块是` macrotask `（宏任务），` macrotask ` 中间的粉红箭头是` microtask `（微任务）。
 

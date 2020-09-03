@@ -16,11 +16,11 @@ location: shenzhen
 
 我走上了一条自己动手，然后希望丰衣足食的道路.....
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/1.jpeg)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/1.jpeg)
 
 不过当我将思路想清楚之后，我发现实现过程比我想象得简单了很多!现在我来记录一下我的思路。
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/2.jpeg)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/2.jpeg)
 
 ## 二、思路
 
@@ -39,7 +39,7 @@ location: shenzhen
 
 根据业务场景，在实现表单校验的过程中，我封装了三个组件：` Form `、` FormItem `、` Input `，它的结构应该下面这样的：
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/1.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/1.png)
 
 
 下面是我对他们的功能分配：
@@ -64,7 +64,7 @@ location: shenzhen
 
 先把场景摆出来~~~
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/2.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/2.png)
 
 上面的场景就包含两个校验需求：
 1. 点击提交，校验整个表单
@@ -74,7 +74,7 @@ location: shenzhen
 
 现在我的目录结构是这样的：
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/3.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/3.png)
 
 开始时，我是这样写的：
 
@@ -330,7 +330,7 @@ validateField (value, prop) {
 
 上面代码的逻辑如下图所示：
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/4.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/4.png)
 
 我们通过遍历每个字段(` key `)，将表单(` form `)和校验规则(` rules `)联系起来，这样就可以获取到每个字段的值(` value `)和对应的校验规则(` rule `)，最后调用校验工具函数就可以了
 
@@ -370,7 +370,7 @@ export default {
 
 如图所示，这样我们就将` FormItem `和检验信息绑定起来：
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/5.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/5.png)
 
 在这里，将` key `和` FormItem `绑定起来，具体是使用` ref `属性。给` FormItem `添加` ref `属性后，我们就可以拿到` FormItem `实例，并且可以操作` FormItem `的属性和方法。
 
@@ -556,7 +556,7 @@ rules: {
 
 思路如下所示
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/6.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/6.png)
 
 但是这个方法也有问题：
 1. 校验可能会执行多次，比如在最后一个输入框输完后，点击提交，这会出发` Form `的整体校验和` Input `的失焦校验。
@@ -575,7 +575,7 @@ rules: {
 
 所以现在的问题是我们怎么知道邮局在哪呢？
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/3.gif)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/3.gif)
 
 在又双叒叕看了` Vue `的` API `后，突然灵光一现，发现`  Provide / inject `可以解决我的问题
 
@@ -689,7 +689,7 @@ getTriggerTimer (lable, triggerTime) {
 
 到这里，表单校验基本完成啦^ _ ^
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/4.jpg)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/4.jpg)
 
 ## 最后
 
@@ -697,7 +697,7 @@ getTriggerTimer (lable, triggerTime) {
 
 下面来总结一下：
 
-![image from dependency](../.vuepress/public/images/write-form-by-using-vue/7.png)
+![image from dependency](../../../.vuepress/public/images/write-form-by-using-vue/7.png)
 
 1. ` Form `组件实现校验功能，` FormItem `显示校验信息，` Input `用于用户输入。
 2. 通过每个字段的` key `值将` Form `、` FormItem `和` Input `组件联系在一起。通过` key `值，` Form `操作` FormItem `实例，让` FormItem `显示校验信息。

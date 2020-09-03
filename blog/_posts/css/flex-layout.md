@@ -2,7 +2,6 @@
 title: Flex Layout
 date: 2020-03-31
 tags:
-  - HTML
   - CSS
 author: lili
 location: shenzhen
@@ -38,7 +37,7 @@ location: shenzhen
 
 采用`Flex`布局的元素，称为`Flex`容器（`flex container`），简称"容器"。它的所有子元素自动成为容器成员，称为 `flex item`。
 
-![image from dependency](../.vuepress/public/images/flex-layout/1.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/1.png)
 
 容器默认存在两根轴：水平的主轴（`main axis`）和垂直的交叉轴（`cross axis`）。主轴的开始位置（与边框的交叉点）叫做`main start`，结束位置叫做`main end`；交叉轴的开始位置叫做`cross start`，结束位置叫做`cross end`。
 项目默认沿主轴排列。单个项目占据的主轴空间叫做`main size`，占据的交叉轴空间叫做`cross size`
@@ -68,7 +67,7 @@ location: shenzhen
 3. column：主轴为垂直方向，起点在上沿。
 4. column-reverse：主轴为垂直方向，起点在下沿。
 
-![image from dependency](../.vuepress/public/images/flex-layout/2.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/2.png)
 
 ### 3.2 `flex-wrap`属性
 
@@ -85,15 +84,15 @@ location: shenzhen
 
 `nowrap`效果：
 
-![image from dependency](../.vuepress/public/images/flex-layout/3.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/3.png)
 
 `wrap`效果：
 
-![image from dependency](../.vuepress/public/images/flex-layout/4.jpg)
+![image from dependency](../../.vuepress/public/images/flex-layout/4.jpg)
 
 `wrap-reverse`效果：
 
-![image from dependency](../.vuepress/public/images/flex-layout/5.jpg)
+![image from dependency](../../.vuepress/public/images/flex-layout/5.jpg)
 
 ### 3.3 `flex-flow`
 
@@ -119,7 +118,7 @@ location: shenzhen
 4. `space-between`：两端对齐，项目之间的间隔都相等。
 5. `space-around`：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
 
-![image from dependency](../.vuepress/public/images/flex-layout/6.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/6.png)
 
 ### 3.5 align-items属性
 
@@ -136,7 +135,7 @@ location: shenzhen
 4. `baseline`: 项目的第一行文字的基线对齐。
 5. `stretch`（默认值）：如果项目未设置高度或设为`auto`，将占满整个容器的高度。
 
-![image from dependency](../.vuepress/public/images/flex-layout/7.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/7.png)
 
 ### 3.6 align-content属性
 
@@ -154,7 +153,7 @@ location: shenzhen
 5. `space-around`：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
 6. `stretch`（默认值）：轴线占满整个交叉轴。
 
-![image from dependency](../.vuepress/public/images/flex-layout/8.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/8.png)
 
 
 ## 四、项目的属性
@@ -175,7 +174,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/flex-layout/9.png)
+![image from dependency](../../.vuepress/public/images/flex-layout/9.png)
 
 ### 4.2 `flex-grow`属性
 
