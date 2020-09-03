@@ -16,13 +16,13 @@ location: shenzhen
 
 首先需要到搬瓦工上购买主机服务
 
-![image from dependency](../.vuepress/public/images/vpn-shadowsocks/1.png)
+![image from dependency](../../.vuepress/public/images/vpn-shadowsocks/1.png)
 
 选一个适合自己的
 
 购买成功之后就可以看到：
 
-![image from dependency](../.vuepress/public/images/vpn-shadowsocks/2.png)
+![image from dependency](../../.vuepress/public/images/vpn-shadowsocks/2.png)
 
 ### 二、登录` VPS `
 
@@ -118,6 +118,6 @@ Enjoy it!
 
 压缩包下载解压后，双击运行` shadowsocks.exe `，之后会在任务栏有一个小飞机图标，右击小飞机图标，选择服务器->编辑服务器：
 
-![image from dependency](../.vuepress/public/images/vpn-shadowsocks/3.png)
+![image from dependency](../../.vuepress/public/images/vpn-shadowsocks/3.png)
 
 在` shadowsocks `的` windows `客户端中，服务器` IP `指你购买的` VPS `的` IP `，服务器端口指你服务器的配置文件中的端口，密码指你服务器的配置文件中的密码，加密指你服务器的配置文件中的加密方式，代理端口默认为` 1080 `不需要改动。其他都可以默认。设置好后，点击添加按钮即可。

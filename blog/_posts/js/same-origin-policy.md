@@ -93,7 +93,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
 
 关于` cookie `还有两个地方值得注意，如下图所示：
 
-![image from dependency](../.vuepress/public/images/same-origin-policy/01.png)
+![image from dependency](../../.vuepress/public/images/same-origin-policy/01.png)
 
 
 ## 四、iframe

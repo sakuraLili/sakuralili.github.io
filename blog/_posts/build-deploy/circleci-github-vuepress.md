@@ -17,7 +17,7 @@ location: shenzhen
 
 然后在[CircleCI](https://circleci.com/)上，用 ***GitHub账号*** 登录` CircleCI `。登录后，就可以将我们的` GitHub `仓库和` CircleCI `连接起来
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/01.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/01.png)
 
 ## 添加 ssh 密钥
 
@@ -25,7 +25,7 @@ location: shenzhen
 
 通常我们都是使用` ssh-keygen -t rsa `创建公钥(` .pub `)和私钥，但是在` CircleCI `上添加密钥时会报错：
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/02.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/02.png)
 
 然后官网提供了[方案](https://circleci.com/docs/2.0/add-ssh-key/):
 
@@ -39,17 +39,17 @@ ssh-keygen -m PEM -t rsa -C "email@example.com"
 
 ` GitHub `添加公钥就不说了，这里只说` CircleCI `添加密钥。
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/03.gif)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/03.gif)
 
 > 添加密钥时， Hostname 需要填 github.com
 
 密钥添加完后，就可以看到列表这里有了内容：
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/06.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/06.png)
 
 ` GitHub `添加完后：
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/07.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/07.png)
 
 可以看到` CircleCI `和` GitHub `上` fingerprints `是相同的。
 
@@ -106,9 +106,9 @@ cd -
 
 然后在` CircleCI `里可以看到部署任务列表和部署详情：
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/12.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/12.png)
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/11.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/11.png)
 
 ## 遇到的问题
 
@@ -116,7 +116,7 @@ cd -
 
 当` CircleCI `服务器尝试连接到` GitHub `的主机时，它可能会提示验证主机密钥。提示是自动化的氪星石：CI环境将无限期挂起，等待用户给出响应。这时我们就只能取消` Job `：
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/08.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/08.png)
 
 **解决方法：**
 
@@ -128,7 +128,7 @@ cd -
 
 这里我们需要执行脚本，但是` GitHub `可能会提示没有权限。
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/10.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/10.png)
 
 
 **解决方法：**
@@ -141,7 +141,7 @@ cd -
 
 #### 3. git 配置
 
-![image from dependency](../.vuepress/public/images/circleci-github-vuepress/09.png)
+![image from dependency](../../.vuepress/public/images/circleci-github-vuepress/09.png)
 
 这个简单，只需要按照提示，在部署脚本里加上` Git `配置就可以了。
 

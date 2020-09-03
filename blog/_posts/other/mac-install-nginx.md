@@ -15,7 +15,7 @@ location: shenzhen
 
 1. 打开终端：快捷键Command + Space，然后输入 terminal.app
 
-![image from dependency](../.vuepress/public/images/mac-install-nginx/01.png)
+![image from dependency](../../.vuepress/public/images/mac-install-nginx/01.png)
 
 2. 输入命令
 
@@ -41,7 +41,7 @@ brew install nginx
 brew info nginx
 ```
 
-![image from dependency](../.vuepress/public/images/mac-install-nginx/02.png)
+![image from dependency](../../.vuepress/public/images/mac-install-nginx/02.png)
 
 在这里，我们可以看到nginx 的Docroot(/usr/local/var/www)，配置文件是/usr/local/etc/nginx/nginx.conf
 并且默认端口是8080，运行时不需要加sudo，然后也说明了运行命令。
@@ -52,7 +52,7 @@ brew info nginx
 open /usr/local/etc/nginx
 ```
 
-![image from dependency](../.vuepress/public/images/mac-install-nginx/03.png)
+![image from dependency](../../.vuepress/public/images/mac-install-nginx/03.png)
 
 打开了nginx目录，然后我们就可以看到nginx.conf配置文件
 

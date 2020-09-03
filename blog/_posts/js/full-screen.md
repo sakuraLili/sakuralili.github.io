@@ -161,7 +161,7 @@ document.addEventListener("fullscreenchange", function( event ) {
 
 ### 前缀总览
 
-![image from dependency](../.vuepress/public/images/full-screen/01.jpg)
+![image from dependency](../../.vuepress/public/images/full-screen/01.jpg)
 
 ## 参考文献
 

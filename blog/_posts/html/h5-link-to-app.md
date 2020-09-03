@@ -16,15 +16,15 @@ location: shenzhen
 
 1. 选择银行卡时，用户` A `除了可以使用银行` APP `或者银行网站转账，也可以跳转支付宝给银行卡转账，如图：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/1.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/1.png)
 
 2. 选择支付宝时，可以保存收款二维码，也可以直接转账给支付宝账户
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/2.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/2.png)
 
 3. 选择微信时，先保存收款二维码，再打开微信
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/3.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/3.png)
 
 这里都是在` APP `中通过点击实现和支付宝和微信的交互，下面让我们用` a `标签来实现这个需求
 
@@ -48,7 +48,7 @@ url=HTTPS://QR.ALIPAY.COM/XXXXXXXX    // 支付宝收款二维码地址
 
 当点击` a `标签时，就会跳到支付宝的转账页面：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/4.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/4.png)
 
 ### 2. 选择银行卡，打开支付宝转账给银行卡
 
@@ -78,12 +78,12 @@ bankName=xxx // 银行名称
 
 上面的链接，可以作为` a `标签` href `的属性值或生成二维码：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/alipay-to-bank.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/alipay-to-bank.png)
 
 
 但是呢，无论是作为` a `标签的` href `属性值还是生成二维码扫描，都会被支付宝拦截：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/5.jpeg)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/5.jpeg)
 
 后来发现去掉参数` bankAccount `就不会有警告了：
 
@@ -93,12 +93,12 @@ alipays://platformapi/startapp?appId=09999988&actionType=toCard&sourceId=bill&ca
 
 生成二维码如下：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/alipay-to-bank-2.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/alipay-to-bank-2.png)
 
 
 如果直接扫描这个二维码是没问题的：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/6.png)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/6.png)
 
 但是下面两种情况还是不可行的：
 1. 作为` a `标签的` href `属性值
@@ -147,7 +147,7 @@ const url = 'http://image.baidu.com/qrcode.jpg'
 
 结果如图：
 
-![image from dependency](../.vuepress/public/images/h5-link-to-app/gif.gif)
+![image from dependency](../../.vuepress/public/images/h5-link-to-app/gif.gif)
 
 最后一个打开微信就简单了
 

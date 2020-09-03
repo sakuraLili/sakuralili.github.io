@@ -551,7 +551,7 @@ app.use(
 
 现在我们可以用` postman `试一下我们定义的接口啦：
 
-![image from dependency](../.vuepress/public/images/express-backend/01.png)
+![image from dependency](../../.vuepress/public/images/express-backend/01.png)
 
 ### 其他
 

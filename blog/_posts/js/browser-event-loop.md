@@ -4,7 +4,6 @@ date: 2020-02-10
 tags:
   - JavaScript
   - Event Loop
-  - web
 author: lili
 location: shenzhen
 ---

@@ -97,7 +97,7 @@ span::after {
   transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
 }
 ```
-![image from dependency](../.vuepress/public/images/css-code-collection/01.png)
+![image from dependency](../../.vuepress/public/images/css-code-collection/01.png)
 
 ## 文章超出...
 
@@ -131,7 +131,7 @@ span::after {
 ```
 效果:
 
-![image from dependency](../.vuepress/public/images/css-tips/1.png)
+![image from dependency](../../.vuepress/public/images/css-tips/1.png)
 
 ## 下划线动画效果
 
@@ -155,7 +155,7 @@ span::after {
 ```
 效果:
 
-![image from dependency](../.vuepress/public/images/css-tips/2.gif)
+![image from dependency](../../.vuepress/public/images/css-tips/2.gif)
 
 
 ## text-shadow - 文字多层阴影效果
@@ -175,7 +175,7 @@ span::after {
 ```
 效果:
 
-![image from dependency](../.vuepress/public/images/css-tips/3.png)
+![image from dependency](../../.vuepress/public/images/css-tips/3.png)
 
 ## 背景混合
 
@@ -200,4 +200,4 @@ span::after {
 
 效果:
 
-![image from dependency](../.vuepress/public/images/css-tips/4.png)
+![image from dependency](../../.vuepress/public/images/css-tips/4.png)

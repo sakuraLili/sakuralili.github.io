@@ -41,7 +41,7 @@ var vm = new Vue({
 
 在` github `上将` Vue `的源码` clone `到本地，我们可以看到，` Vue `的源码目录结构主要如下：
 
-![image from dependency](../.vuepress/public/images/vue-reactive-behavior/1.png)
+![image from dependency](../../.vuepress/public/images/vue-reactive-behavior/1.png)
 
 ### ` Vue `入口文件
 
@@ -60,7 +60,7 @@ export default Vue
 
 ` Vue `实例的初始化包括一系列的数据初始化,它的目录结构如下：
 
-![image from dependency](../.vuepress/public/images/vue-reactive-behavior/2.png)
+![image from dependency](../../.vuepress/public/images/vue-reactive-behavior/2.png)
 
 来到` index.js `中
 ```js
@@ -130,7 +130,7 @@ export function initState (vm: Component) {
 
 根据代码，我们也可以得到选项对象初始化的顺序：
 
-![image from dependency](../.vuepress/public/images/vue-reactive-behavior/3.png)
+![image from dependency](../../.vuepress/public/images/vue-reactive-behavior/3.png)
 
 
 我们先来说说` data `的初始化
@@ -432,15 +432,15 @@ function flushSchedulerQueue () {
 
 1. ` Vue `中数据响应原理主要涉及到下面几个类
 
-![image from dependency](../.vuepress/public/images/vue-reactive-behavior/4.png)
+![image from dependency](../../.vuepress/public/images/vue-reactive-behavior/4.png)
 
 下图是类中的一些属性和方法
 
-![image from dependency](../.vuepress/public/images/vue-reactive-behavior/5.png)
+![image from dependency](../../.vuepress/public/images/vue-reactive-behavior/5.png)
 
 2. 下图是几个类的关联
 
-![image from dependency](../.vuepress/public/images/vue-reactive-behavior/6.png)
+![image from dependency](../../.vuepress/public/images/vue-reactive-behavior/6.png)
 
 - 图中的红色箭头是` Watcher `的实例化。在实例化的过程中，会调用方法` get `来设置` Dep.target `为当前` Watcher `实例，并且触发观察对象的` getter `方法，进行依赖收集。
 - 图中的蓝色箭头是依赖收集的过程。观察对象的` getter `方法被触发，经过` dep.depend() `、` Dep.target.addDep() `和` dep.addSub() `等方法，会将当前观察对象的` dep `实例添加到` Watcher ` 实例的` deps `中，并且将当前` Watcher `实例添加到` Dep `的属性` subs `中进行统一管理。

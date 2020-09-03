@@ -19,7 +19,7 @@ location: shenzhen
 
 ## 二、 基本概念
 
-![image from dependency](../.vuepress/public/images/grid-layout/grid.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/grid.png)
 
 - **容器:** 采用网格布局的区域，称为"容器"（` container `）。
 - **行和列:** 容器里面的水平区域称为"行"（` row `），垂直区域称为"列"（` column `）。
@@ -71,7 +71,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/05.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/05.jpg)
 
 除了使用绝对单位，也可以使用百分比
 
@@ -111,7 +111,7 @@ location: shenzhen
   grid-template-columns: repeat(auto-fill, 100px);
 }
 ```
-![image from dependency](../.vuepress/public/images/grid-layout/02.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/02.png)
 
 
 #### (3) ` fr `
@@ -146,7 +146,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/03.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/03.png)
 
 #### (5) ` auto `
 
@@ -171,7 +171,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/06.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/06.jpg)
 
 
 需要注意的是，一个网格线可以有不止一个名字。例如，这里第` 2 `条网格线有两个名字：` row1-end `和` row2-start `：
@@ -214,7 +214,7 @@ location: shenzhen
 
 这将创建一个四列宽三行高的网格。 整个第一行将由` header ` 区域组成。 中间一行将由两个` main `区域、一个空单元格和一个 ` sidebar `区域组成。 最后一行是` footer `区域组成。
 
-![image from dependency](../.vuepress/public/images/grid-layout/07.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/07.jpg)
 
 注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为**区域名-start**，终止网格线自动命名为**区域名-end**。
 
@@ -248,7 +248,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/08.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/08.jpg)
 
 ```css
 .container {
@@ -274,7 +274,7 @@ location: shenzhen
 
 **grid-auto-flow**决定放置顺序，默认值是` row `，即"先行后列"
 
-![image from dependency](../.vuepress/public/images/grid-layout/04.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/04.png)
 
 也可以将它设成` column `，变成"先列后行"。
 
@@ -283,7 +283,7 @@ location: shenzhen
   grid-auto-flow: column;
 }
 ```
-![image from dependency](../.vuepress/public/images/grid-layout/05.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/05.png)
 
 
 ` grid-auto-flow `属性除了设置成` row `和` column `，还可以设成` row dense `和` column dense `。这两个值主要用于，某些项目指定位置以后，剩下的项目怎么自动放置。
@@ -306,7 +306,7 @@ location: shenzhen
   grid-column-end: 3;
 }
 ```
-![image from dependency](../.vuepress/public/images/grid-layout/06.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/06.png)
 
 现在修改设置，设为` row dense `，表示"先行后列"，并且尽可能紧密填满，尽量不出现空格。
 
@@ -317,7 +317,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/07.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/07.png)
 
 上图会先填满第一行，再填满第二行，所以` 3 `号项目就会紧跟在` 1 `号项目的后面。` 8 `号项目和` 9 `号项目就会排到第四行。
 
@@ -327,7 +327,7 @@ location: shenzhen
   grid-auto-flow: column dense;
 }
 ```
-![image from dependency](../.vuepress/public/images/grid-layout/08.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/08.png)
 
 上图会先填满第一列，再填满第` 2 `列，所以` 3 `号项目在第一列，` 4 `号项目在第二列。` 8 `号项目和` 9 `号项目被挤到了第四列。
 
@@ -356,7 +356,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/09.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/09.jpg)
 
 ```css
 .container{
@@ -364,7 +364,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/10.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/10.jpg)
 
 ```css
 .container {
@@ -372,7 +372,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/11.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/11.jpg)
 
 ```css
 .container {
@@ -380,7 +380,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/12.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/12.jpg)
 
 也可以通过给单个**项目**设置` justify-self `属性来达到上述效果。
 
@@ -390,7 +390,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/13.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/13.jpg)
 
 ```css
 .container {
@@ -398,7 +398,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/14.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/14.jpg)
 
 ```css
 .container {
@@ -406,7 +406,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/15.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/15.jpg)
 
 ```css
 .container {
@@ -414,7 +414,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/16.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/16.jpg)
 
 也可以通过给单个**项目**设置` align-self `属性来达到上述效果。
 
@@ -459,7 +459,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/17.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/17.jpg)
 
 ```css
 .container {
@@ -467,7 +467,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/18.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/18.jpg)
 
 ```css
 .container {
@@ -475,7 +475,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/19.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/19.jpg)
 
 ```css
 .container {
@@ -483,7 +483,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/20.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/20.jpg)
 
 ```css
 .container {
@@ -491,7 +491,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/21.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/21.jpg)
 
 ```css
 .container {
@@ -499,7 +499,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/22.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/22.jpg)
 
 ```css
 .container {
@@ -507,7 +507,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/23.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/23.jpg)
 
 
 ```css
@@ -516,7 +516,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/24.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/24.jpg)
 
 ```css
 .container {
@@ -524,7 +524,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/25.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/25.jpg)
 
 ```css
 .container {
@@ -532,7 +532,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/26.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/26.jpg)
 
 ```css
 .container {
@@ -540,14 +540,14 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/27.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/27.jpg)
 
 ```css
 .container {
   align-content: space-around;
 }
 ```
-![image from dependency](../.vuepress/public/images/grid-layout/28.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/28.jpg)
 
 ```css
 .container {
@@ -555,7 +555,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/29.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/29.jpg)
 
 ```css
 .container {
@@ -563,7 +563,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/30.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/30.jpg)
 
 ` place-content `属性是` align-content `属性和` justify-content `属性的合并简写形式。
 
@@ -597,7 +597,7 @@ location: shenzhen
 ```
 上面代码指定新增的行高统一为`50px `（原始的行高为` 100px `）。
 
-![image from dependency](../.vuepress/public/images/grid-layout/09.png)
+![image from dependency](../../.vuepress/public/images/grid-layout/09.png)
 
 ### ` 3.9 ` `grid-template / grid `
 
@@ -639,7 +639,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/36.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/36.jpg)
 
 ```css
 .item-b {
@@ -650,7 +650,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/37.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/37.jpg)
 
 如果没有声明` grid-column-end / grid-row-end `，默认情况下，该网格项将跨越` 1 `个轨道。
 
@@ -680,7 +680,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/38.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/38.jpg)
 
 如果没有指定结束行值，则该网格项默认跨越` 1 `个轨道。
 
@@ -717,7 +717,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/39.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/39.jpg)
 
 ### `4.4 ` ` justify-self / align-self / place-self`
 
@@ -746,7 +746,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/40.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/40.jpg)
 
 
 ```css
@@ -755,7 +755,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/41.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/41.jpg)
 
 ```css
 .item-a {
@@ -763,7 +763,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/42.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/42.jpg)
 
 ```css
 .item-a {
@@ -771,7 +771,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/43.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/43.jpg)
 
 ```css
 .item-a {
@@ -779,7 +779,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/44.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/44.jpg)
 
 ```css
 .item-a {
@@ -787,7 +787,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/45.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/45.jpg)
 
 ```css
 .item-a {
@@ -795,7 +795,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/46.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/46.jpg)
 
 ```css
 .item-a {
@@ -803,7 +803,7 @@ location: shenzhen
 }
 ```
 
-![image from dependency](../.vuepress/public/images/grid-layout/47.jpg)
+![image from dependency](../../.vuepress/public/images/grid-layout/47.jpg)
 
 ` place-self `属性是` align-self `属性和` justify-self `属性的合并简写形式。
 

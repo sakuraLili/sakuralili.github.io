@@ -41,7 +41,7 @@ genrsa -out rsa_private_key.pem 1024
 
 该命令会生成1024位的私钥，生成成功的界面如下：
 
-![image from dependency](../.vuepress/public/images/openssl-rsa/01.png)
+![image from dependency](../../.vuepress/public/images/openssl-rsa/01.png)
 
 2. 生成 RSA公钥
 
@@ -51,7 +51,7 @@ rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
 
 结果如图：
 
-![image from dependency](../.vuepress/public/images/openssl-rsa/02.png)
+![image from dependency](../../.vuepress/public/images/openssl-rsa/02.png)
 
 (mac环境)接着:
 
@@ -61,7 +61,7 @@ open ~
 
 此时我们就可以看到这个目录下的公钥和私钥文件：
 
-![image from dependency](../.vuepress/public/images/openssl-rsa/03.png)
+![image from dependency](../../.vuepress/public/images/openssl-rsa/03.png)
 
 ## 其他命令
 

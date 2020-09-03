@@ -119,7 +119,7 @@ location: shenzhen
 
 ` React `对不同类型的节点的处理逻辑我们很容易得到推论，那就是` React `的` DOM Diff `算法实际上只会对树进行逐层比较，两棵树只会对同一层次的节点进行比较，如下所述：
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/01.png)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/01.png)
 
 
 ` React `只会对相同颜色方框内的` DOM `节点进行比较，即同一个父节点下的所有子节点。当发现节点已经不存在，则该节点及其子节点会被完全删除掉，不会用于进一步的比较。这样只需要对树进行一次遍历，便能完成整个` DOM `树的比较。
@@ -146,7 +146,7 @@ updateChildren: function(nextNestedChildrenElements, transaction, context) {
 
 如果出现了` DOM `节点跨层级的移动操作，如下图，` React diff `会有怎样的表现呢
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/02.png)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/02.png)
 
 
 如图，` A `节点（包括其子节点）整个被移动到` D `节点下，由于` React ` 只会简单的考虑同层级节点的位置变换，而对于不同层级的节点，只有创建和删除操作。当根节点发现子节点中` A ` 消失了，就会直接销毁` A `；当` D `发现多了一个子节点` A `，则会创建新的` A `（包括子节点）作为其子节点。此时，` React diff `的执行情况：` create A -> create B -> create C -> delete A `。
@@ -166,7 +166,7 @@ updateChildren: function(nextNestedChildrenElements, transaction, context) {
 
 如下图，当` component D `改变为` component G ` 时，即使这两个` component `结构相似，一旦` React `判断 ` D `和` G `是不同类型的组件，就不会比较二者的结构，而是直接删除` component D `，重新创建` component G ` 以及其子节点。虽然当两个` component ` 是不同类型但结构相似时，` React diff `会影响性能，但正如` React `官方博客所言：不同类型的 ` component `是很少存在相似` DOM tree ` 的机会，因此这种极端因素很难在实现开发过程中造成重大影响的。
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/03.jpg)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/03.jpg)
 
 ### ` 2.3 ` ` element diff `
 
@@ -216,7 +216,7 @@ function enqueueRemove(parentInst, fromIndex) {
 
 如下图，老集合中包含节点：` A `、` B `、` C `、` D `，更新后的新集合中包含节点：` B `、` A `、` D `、` C `，此时新老集合进行` diff `差异化对比，发现` B != A `，则创建并插入` B `至新集合，删除老集合` A `；以此类推，创建并插入` A `、` D `和` C `，删除` B `、` C `和` D `。
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/04.jpg)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/04.jpg)
 
 ` React `发现这类操作繁琐冗余，因为这些都是相同的节点，但由于位置发生变化，导致需要进行繁杂低效的删除、创建操作，其实只要对这些节点进行位置移动即可。
 
@@ -224,13 +224,13 @@ function enqueueRemove(parentInst, fromIndex) {
 
 新老集合所包含的节点，如下图所示，新老集合进行` diff ` 差异化对比，通过` key ` 发现新老集合中的节点都是相同的节点，因此无需进行节点删除和创建，只需要将老集合中节点的位置进行移动，更新为新集合中节点的位置，此时` React `给出的` diff ` 结果为：` B `、` D `不做任何操作，` A `、` C `进行移动操作，即可。
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/05.jpg)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/05.jpg)
 
 那么，如此高效的` diff ` 到底是如何运作的呢？让我们通过源码进行详细分析。
 
 首先对新集合的节点进行循环遍历，` for (name in nextChildren) `，通过唯一` key ` 可以判断新老集合中是否存在相同的节点，` if (prevChild === nextChild) `，如果存在相同节点，则进行移动操作，但在移动前需要将当前节点在老集合中的位置与` lastIndex `进行比较，` if (child._mountIndex < lastIndex) `，则进行节点移动操作，否则不执行该操作。这是一种顺序优化手段，` lastIndex ` 一直在更新，表示访问过的节点在老集合中最右的位置（即最大的位置），如果新集合中当前访问的节点比` lastIndex ` 大，说明当前访问节点在老集合中就比上一个节点位置靠后，则该节点不会影响其他节点的位置，因此不用添加到差异队列中，即不执行移动操作，只有当访问的节点比` lastIndex ` 小时，才需要进行移动操作，流程如下：
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/06.png)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/06.png)
 
 以上图为例，可以更为清晰直观的描述` diff ` 的差异对比过程：
 
@@ -246,7 +246,7 @@ function enqueueRemove(parentInst, fromIndex) {
 
 以下图为例：
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/07.jpg)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/07.jpg)
 
 - 从新集合中取得` B `，判断老集合中存在相同节点` B `，由于` B `在老集合中的位置` B._mountIndex = 1 `，此时` lastIndex = 0 `，因此不对` B `进行移动操作；更新` lastIndex ＝ 1 `，并将` B `的位置更新为新集合中的位置` B._mountIndex = 0 `，` nextIndex++ `进入下一个节点的判断。
 
@@ -344,7 +344,7 @@ _mountChildAtIndex: function(
 
 当然，` React diff ` 还是存在些许不足与待优化的地方，如下图所示，若新集合的节点更新为：` D `、` A `、` B `、` C `，与老集合对比只有` D `节点移动，而` A `、` B `、` C `仍然保持原有的顺序，理论上` diff `应该只需对` D ` 执行移动操作，然而由于` D ` 在老集合的位置是最大的，导致其他节点的` _mountIndex < lastIndex `，造成` D `没有执行移动操作，而是` A `、` B `、` C `全部移动到` D `节点后面的现象。
 
-![image from dependency](../.vuepress/public/images/react-virtualdom-diff/08.jpg)
+![image from dependency](../../.vuepress/public/images/react-virtualdom-diff/08.jpg)
 
 建议：在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响` React `的渲染性能。
 
