@@ -27,10 +27,6 @@ location: shenzhen
 
 ## 浏览器
 
-## Webpack
-
-[官网](https://webpack.js.org/)
-
 ## 函数式编程
 
 [Functional-Light-JS](https://github.com/getify/Functional-Light-JS)  Kyle Simpson 英文版
@@ -87,7 +83,15 @@ location: shenzhen
 
 [Choosing a JavaScript build tool: to config or not config](https://dev.to/netlify/choosing-a-javascript-build-tool-to-config-or-not-config-2ia8)
 
+[Webpack](https://webpack.js.org/)
+
 [深入浅出 Webpack](http://webpack.wuhaolin.cn/)
+
+## 部署工具
+
+[Cycle](http://cyclejs.cn/getting-started.html) 持续化构建、自动部署
+
+[Travis CI](https://www.travis-ci.org/)
 
 ## 小程序
 
@@ -107,9 +111,6 @@ location: shenzhen
 
 [Weex](http://weex.apache.org/) 官网
 
-## Cycle
-
-[Cycle](http://cyclejs.cn/getting-started.html) 持续化构建、自动部署
 
 ## [GraphQL](https://graphql.org/)
 
