@@ -2,7 +2,7 @@
 title: MAC 生成 SSH KEY
 date: 2019-01-10
 tags:
-  - 其他
+  - tools
 author: lili
 location: shenzhen
 ---

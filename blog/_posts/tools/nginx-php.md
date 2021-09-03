@@ -2,7 +2,7 @@
 title: Nginx+Php本地环境搭建
 date: 2019-01-10
 tags:
-  - 其他
+  - tools
 author: lili
 location: shenzhen
 ---

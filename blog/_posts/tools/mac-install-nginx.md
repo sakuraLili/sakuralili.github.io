@@ -2,7 +2,7 @@
 title: MAC 下安装 nginx
 date: 2019-01-11
 tags:
-  - 其他
+  - tools
 author: lili
 location: shenzhen
 ---

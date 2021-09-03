@@ -2,7 +2,7 @@
 title: Git 配置问题
 date: 2019-01-22
 tags:
-  - 其他
+  - tools
 author: lili
 location: shenzhen
 ---

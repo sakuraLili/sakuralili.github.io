@@ -2,7 +2,7 @@
 title: 使用 OpenSSL 生成 RSA 密钥
 date: 2020-05-12
 tags:
-  - 其他
+  - tools
 author: lili
 location: shenzhen
 ---
