@@ -76,6 +76,8 @@ location: shenzhen
 
 [「备忘录」60+Git常用命令行](https://juejin.im/post/5eb2d6bce51d454d9d3ed14f)
 
+[Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+
 [前端容易忽略的 debugger 调试技巧](https://mp.weixin.qq.com/s/VOoDHqIo4gh3scHVNxk3lA) Chrome 调试技巧
 
 [你不知道的 Chrome 调试技巧](https://juejin.cn/book/6844733783166418958) 掘金小册
