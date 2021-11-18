@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /tmp/workspace
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:16
       - image: bash:4.4.19
     steps:
       - run: echo "==============构建开始=================="
@@ -30,7 +30,7 @@ jobs:
   deploy:
     working_directory: /tmp/workspace
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:16
       - image: bash:4.4.19
     steps:
       - add_ssh_keys:
