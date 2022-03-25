@@ -163,3 +163,34 @@ const unzip = function(b64Data) {
 ```js
 document.title='\u200E'
 ```
+
+## 点击 Tab 项，元素进入视图
+
+```js
+const scrollIntoView = (mainRef, index) => {
+  if (!mainRef?.current) {
+    return;
+  }
+
+  const eleContainer = mainRef.current;
+
+  const invisibleWidth =
+    eleContainer.scrollWidth - document.documentElement.clientWidth;
+  if (invisibleWidth <= 0) {
+    return;
+  }
+
+  const items = eleContainer.children || [];
+  const ele = items[index];
+
+  if (ele) {
+    const { left, right } = ele.getBoundingClientRect();
+    const eleCenterX = (left + right) / 2;
+    const viewCenterX = document.documentElement.clientWidth / 2;
+    const diffX = eleCenterX - viewCenterX;
+    const scrollLeft = eleContainer.scrollLeft + diffX;
+    eleContainer.scrollLeft = Math.min(invisibleWidth, scrollLeft);
+  }
+};
+
+```
