@@ -113,7 +113,7 @@ someAsyncOperation(() => {
 ` poll `阶段有两个功能：
 
 1. 如果发现计时器的时间到了，就绕回到` timers ` 阶段执行计时器的回调。
-2. 然后再，执行` poll `队列里的回调。
+2. 然后再执行` poll `队列里的回调。
 
 当` event loop `进入` poll `阶段，如果发现没有计时器，就会：
 
@@ -138,7 +138,7 @@ someAsyncOperation(() => {
 
 ## 微任务和宏任务
 
-每次执行栈的同步任务执行完毕，就会去任务队列中取出完成的异步任务，队列中又分为` microtasks queues `务队列等到把` microtasks  queues `所有的` microtasks `都执行完毕,注意是所有的,他才会从宏任务队列中取事件。等到把队列中的事件取出一个，放入执行栈执行完成，就算一次循环结束，之后` event loop `继续循环，他会再去` microtasks queues `执行所有的任务，然后再从宏任务队列里面取一个，如此反复循环。
+每次执行栈的同步任务执行完毕，就会去任务队列中取出完成的异步任务，队列中又分为` microtasks queues `和宏任务队。等到把` microtasks  queues `所有的` microtasks `都执行完毕,注意是所有的,他才会从宏任务队列中取事件。等到把队列中的事件取出一个，放入执行栈执行完成，就算一次循环结束，之后` event loop `继续循环，他会再去` microtasks queues `执行所有的任务，然后再从宏任务队列里面取一个，如此反复循环。
 
 - 同步任务执行完
 - 去执行` microtasks`，把所有` microtasks queues `清空
