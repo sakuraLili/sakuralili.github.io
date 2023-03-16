@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue + Sass 动态换肤 | 既然选择了远方，便只顾风雨兼程</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link ref="icon" href="./public/favicon.icon">
+    <meta name="description" content="根据不同的配色方案，在前端实现动态切换系统主题颜色。
+
+大概的思路就是给 html 根标签设置一个 data-theme 属性，然后通过 js 切换 data-theme 的属性值，
+
+创建项目
+
+npm install -g @vue/cli
+vue create vue-theme
+
+安装 Sass 依赖
+
+npm install ...">
+    
+    <link rel="preload" href="/assets/css/0.styles.730f6d4f.css" as="style"><link rel="preload" href="/assets/js/app.c4cd884f.js" as="script"><link rel="preload" href="/assets/js/23.d4940eec.js" as="script"><link rel="preload" href="/assets/js/5.5d32c9ea.js" as="script"><link rel="preload" href="/assets/js/63.777e9119.js" as="script"><link rel="prefetch" href="/assets/js/10.a13898e2.js"><link rel="prefetch" href="/assets/js/11.ea480a48.js"><link rel="prefetch" href="/assets/js/12.0623054f.js"><link rel="prefetch" href="/assets/js/13.ef25626c.js"><link rel="prefetch" href="/assets/js/14.37d92c2e.js"><link rel="prefetch" href="/assets/js/15.186b7794.js"><link rel="prefetch" href="/assets/js/16.3a23dbe1.js"><link rel="prefetch" href="/assets/js/17.cf1e4c9d.js"><link rel="prefetch" href="/assets/js/18.733102b1.js"><link rel="prefetch" href="/assets/js/19.eb455b58.js"><link rel="prefetch" href="/assets/js/20.e1adbccc.js"><link rel="prefetch" href="/assets/js/21.70504574.js"><link rel="prefetch" href="/assets/js/22.a40e7218.js"><link rel="prefetch" href="/assets/js/24.e000ab2c.js"><link rel="prefetch" href="/assets/js/25.2fe1472c.js"><link rel="prefetch" href="/assets/js/26.84502e94.js"><link rel="prefetch" href="/assets/js/27.c5d352fe.js"><link rel="prefetch" href="/assets/js/28.8e4ee861.js"><link rel="prefetch" href="/assets/js/29.fb15a9ed.js"><link rel="prefetch" href="/assets/js/3.2bd813b0.js"><link rel="prefetch" href="/assets/js/30.baf8f290.js"><link rel="prefetch" href="/assets/js/31.369fdd21.js"><link rel="prefetch" href="/assets/js/32.c0176c82.js"><link rel="prefetch" href="/assets/js/33.b3200294.js"><link rel="prefetch" href="/assets/js/34.08880f00.js"><link rel="prefetch" href="/assets/js/35.133a227c.js"><link rel="prefetch" href="/assets/js/36.293f2b2b.js"><link rel="prefetch" href="/assets/js/37.f92a5aa5.js"><link rel="prefetch" href="/assets/js/38.11242c63.js"><link rel="prefetch" href="/assets/js/39.1540f3d9.js"><link rel="prefetch" href="/assets/js/4.dde594c9.js"><link rel="prefetch" href="/assets/js/40.bc77545d.js"><link rel="prefetch" href="/assets/js/41.fe6b364e.js"><link rel="prefetch" href="/assets/js/42.6b17d3ae.js"><link rel="prefetch" href="/assets/js/43.d988bf22.js"><link rel="prefetch" href="/assets/js/44.9b709226.js"><link rel="prefetch" href="/assets/js/45.0797ebde.js"><link rel="prefetch" href="/assets/js/46.d41406d1.js"><link rel="prefetch" href="/assets/js/47.26d992a5.js"><link rel="prefetch" href="/assets/js/48.edf0660d.js"><link rel="prefetch" href="/assets/js/49.e1bd4b64.js"><link rel="prefetch" href="/assets/js/50.17997f4a.js"><link rel="prefetch" href="/assets/js/51.0731d59f.js"><link rel="prefetch" href="/assets/js/52.718863ae.js"><link rel="prefetch" href="/assets/js/53.4d2f7088.js"><link rel="prefetch" href="/assets/js/54.91ac93f6.js"><link rel="prefetch" href="/assets/js/55.3216e5c5.js"><link rel="prefetch" href="/assets/js/56.a2736731.js"><link rel="prefetch" href="/assets/js/57.93476b89.js"><link rel="prefetch" href="/assets/js/58.9984e9d6.js"><link rel="prefetch" href="/assets/js/59.27eeb159.js"><link rel="prefetch" href="/assets/js/6.e9162c19.js"><link rel="prefetch" href="/assets/js/60.83f3f7cd.js"><link rel="prefetch" href="/assets/js/61.322f6435.js"><link rel="prefetch" href="/assets/js/62.af66f292.js"><link rel="prefetch" href="/assets/js/64.05118592.js"><link rel="prefetch" href="/assets/js/65.9ba14b43.js"><link rel="prefetch" href="/assets/js/66.62408b82.js"><link rel="prefetch" href="/assets/js/67.fa72ffa1.js"><link rel="prefetch" href="/assets/js/68.c16dfb41.js"><link rel="prefetch" href="/assets/js/7.f41c39e4.js"><link rel="prefetch" href="/assets/js/8.cd0ad175.js"><link rel="prefetch" href="/assets/js/9.f1977faa.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.8fa4990d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.730f6d4f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">既然选择了远方，便只顾风雨兼程 </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Blog</a></li><li class="nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="nav-item"><a href="/2019/10/20/base-list/" class="nav-link">学习资源</a></li><li class="nav-item"><a href="/handbook/" class="nav-link">前端学习手册</a></li><li class="nav-item"><a href="/tag/Reading%20Notes/" class="nav-link">读书笔记</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">既然选择了远方，便只顾风雨兼程 </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">Tags</a></li><li class="mobile-nav-item"><a href="/2019/10/20/base-list/" class="nav-link">学习资源</a></li><li class="mobile-nav-item"><a href="/handbook/" class="nav-link">前端学习手册</a></li><li class="mobile-nav-item"><a href="/tag/Reading%20Notes/" class="nav-link">读书笔记</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div id="vuepress-theme-blog__post-layout"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="vuepress-blog-theme-content"><header><h1 itemprop="name headline" class="post-title">
+        Vue + Sass 动态换肤
+      </h1> <div class="post-meta"><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="post-meta-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">lili</span> <span itemprop="address">   in shenzhen</span></div> <div class="post-meta-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-04-28T00:00:00.000Z">
+      Tue Apr 28 2020
+    </time></div> <ul itemprop="keywords" class="post-meta-tags"><li class="post-tag" data-v-42ccfcd5><a href="/tag/Vue" data-v-42ccfcd5><span data-v-42ccfcd5>Vue</span></a></li><li class="post-tag" data-v-42ccfcd5><a href="/tag/CSS" data-v-42ccfcd5><span data-v-42ccfcd5>CSS</span></a></li></ul></div></header> <div itemprop="articleBody" class="content__default"><p>根据不同的配色方案，在前端实现动态切换系统主题颜色。</p> <p>大概的思路就是给<code>html</code>根标签设置一个<code>data-theme</code>属性，然后通过<code>js</code>切换<code>data-theme</code>的属性值，</p> <h2 id="创建项目"><a href="#创建项目" class="header-anchor">#</a> 创建项目</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> @vue/cli
+vue create vue-theme
+</code></pre></div><h2 id="安装sass依赖"><a href="#安装sass依赖" class="header-anchor">#</a> 安装<code>Sass</code>依赖</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-D</span> sass-loader sass
+</code></pre></div><h2 id="开始"><a href="#开始" class="header-anchor">#</a> 开始</h2> <ol><li>新建一个<code>_theme.scss</code>文件，在里面配置不同的颜色方案，不同的配色方案，颜色变量要一一对应。</li></ol> <div class="language-scss extra-class"><pre class="language-scss"><code>
+<span class="token property"><span class="token variable">$themes</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token property">light</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token comment">// 字体颜色</span>
+    <span class="token property">main_color</span><span class="token punctuation">:</span> #1E1E20<span class="token punctuation">,</span>
+
+    <span class="token comment">// 背景颜色</span>
+    <span class="token property">main_background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">,</span>
+
+    <span class="token comment">// 边框颜色</span>
+    <span class="token property">main_border_color</span><span class="token punctuation">:</span> #E6E6E6<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token property">dark</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token property">main_color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">,</span>
+
+    <span class="token property">main_background</span><span class="token punctuation">:</span> #1E1E20<span class="token punctuation">,</span>
+
+    <span class="token property">main_border_color</span><span class="token punctuation">:</span> #4a4a4a<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><blockquote><p>注意，<code>scss</code>文件名建议用下划线开头，如<code>_themes.scss</code>，防止执行时被编译成单独的<code>css</code>文件。</p></blockquote> <ol start="2"><li>在新建一个<code>_theme-handle.scss</code>文件，用来操作变量</li></ol> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@import</span> <span class="token string">'./_themes.scss'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 遍历主题</span>
+<span class="token keyword">@mixin</span> <span class="token selector">themeify </span><span class="token punctuation">{</span>
+  <span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$theme-name</span>, <span class="token variable">$theme-map</span> in <span class="token variable">$themes</span> </span><span class="token punctuation">{</span>
+    <span class="token comment">// !global 把局部变量强升为全局变量</span>
+    <span class="token property"><span class="token variable">$theme-map</span></span><span class="token punctuation">:</span> <span class="token variable">$theme-map</span> !global<span class="token punctuation">;</span>
+    <span class="token comment">// 判断 html 的 data-theme 的属性值</span>
+    <span class="token selector">[data-theme=&quot;<span class="token variable">#{$theme-name}</span>&quot;] <span class="token parent important">&amp;</span> </span><span class="token punctuation">{</span>
+      <span class="token keyword">@content</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 声明一个根据 Key 获取颜色的 function</span>
+<span class="token keyword">@function</span> <span class="token function">themed</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">@return</span> <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$theme-map</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 获取背景颜色</span>
+<span class="token keyword">@mixin</span> background_<span class="token function">color</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> <span class="token selector">themeify </span><span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">themed</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">)</span><span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 获取字体颜色</span>
+<span class="token keyword">@mixin</span> font_<span class="token function">color</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> <span class="token selector">themeify </span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">themed</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">)</span><span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 获取边框颜色</span>
+<span class="token keyword">@mixin</span> border_<span class="token function">color</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> <span class="token selector">themeify </span><span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> <span class="token function">themed</span><span class="token punctuation">(</span><span class="token variable">$color</span><span class="token punctuation">)</span><span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="3"><li>在<code>Vue</code>组件中使用：</li></ol> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token atrule"><span class="token rule">@import</span> <span class="token string">&quot;@/assets/styles/_theme-handle.scss&quot;</span><span class="token punctuation">;</span></span>
+
+<span class="token selector">.scss-container</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
+  <span class="token atrule"><span class="token rule">@include</span> font_<span class="token function">color</span><span class="token punctuation">(</span><span class="token string">&quot;main_color&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+  <span class="token atrule"><span class="token rule">@include</span> background_<span class="token function">color</span><span class="token punctuation">(</span><span class="token string">&quot;main_background&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="4"><li>动态切换主题：</li></ol> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scss-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Vue + Scss 动态换肤<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>() =&gt; changeTheme('light')<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>浅色主题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>() =&gt; changeTheme('dark')<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>深色主题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">changeTheme</span><span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;data-theme&quot;</span><span class="token punctuation">,</span> type<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer><!----> <hr> <!----></footer></article> <div class="sticker vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#创建项目" title="创建项目">创建项目</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#安装sass依赖" title="安装 Sass 依赖">安装 Sass 依赖</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#开始" title="开始">开始</a></div></div></div></div> <footer class="footer" data-v-3d9deeb8><div class="footer-left-wrap" data-v-3d9deeb8><ul class="contact" data-v-3d9deeb8></ul></div> <div class="footer-right-wrap" data-v-3d9deeb8><ul class="copyright" data-v-3d9deeb8></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c4cd884f.js" defer></script><script src="/assets/js/23.d4940eec.js" defer></script><script src="/assets/js/5.5d32c9ea.js" defer></script><script src="/assets/js/63.777e9119.js" defer></script>
+  </body>
+</html>
